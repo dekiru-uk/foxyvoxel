@@ -1,0 +1,35 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+    background: white;
+
+	&.menu-active {
+		overflow: hidden;
+		// position: fixed;
+	}
+}
+
+img {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+
+strong {
+	font-weight: 700;
+}
+
+// IE
+.image-object-fit {
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+	img {
+		opacity: 0;
+	}
+}

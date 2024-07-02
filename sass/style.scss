@@ -1,0 +1,39 @@
+/*!
+Theme Name: Dekiru
+Author: jake / dekiru
+Author URI: https://dekiru.uk
+Description: WP theme
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: dekiru
+*/
+
+@import 'variables-site/variables-site';
+
+@import
+	'vendor/breakpoint/breakpoint',
+	'vendor/hamburgers/hamburgers',
+	'vendor/magnific-popup';
+
+@import 'mixins/mixins-master';
+@import 'normalize';
+
+@import 'typography/typography';
+
+@import 'elements/elements';
+
+@import 'forms/forms';
+@import 'navigation/navigation';
+
+@import
+	'modules/accessibility',
+	'modules/alignments',
+	'modules/clearings';
+
+@import 
+	'layout/base',
+	'layout/header',
+	'layout/projects',
+	'layout/footer';
+	

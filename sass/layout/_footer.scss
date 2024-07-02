@@ -1,0 +1,26 @@
+.site-footer {
+    background: black;
+    color: white;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include breakpoint($medium) {
+        @include font-size(0.75);
+    }
+
+    p {
+        margin: 0;
+    }
+
+    a {
+        color: $tdc_primary;
+        transition: color 0.5s;
+
+        &:hover {
+            color: $electric_blue;
+        }
+    }
+}
