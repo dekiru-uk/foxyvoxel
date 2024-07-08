@@ -99,8 +99,8 @@ function scriptsBuild() {
 // BrowserSync
 function browserSyncInit(done) {
   browsersync.init({
-    proxy: 'http://dekiru.local/',
-    host: 'dekiru.local',
+    proxy: 'http://foxyvoxel.local/',
+    host: 'foxyvoxel.local',
     open: 'external',
     browser: 'microsoft edge',
     online: true,
