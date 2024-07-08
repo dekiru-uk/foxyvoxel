@@ -120,13 +120,18 @@ add_action( 'after_setup_theme', 'dekiru_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function dekiru_scripts() {
-	wp_enqueue_style( 'dekiru-style', get_stylesheet_uri() );
-
+	
 	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js', array(), null, true);
+	wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), null, true);
 
+	wp_enqueue_script('swiper-script', '//cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js', array(), null, true);
+	wp_enqueue_style( 'swiper-style', '//cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css' );
+	
+	wp_enqueue_script( 'magnifique-scripts', get_template_directory_uri() . '/js/vendor/jquery.magnific-popup-edit.js', array(), null, true );
+	
 	wp_enqueue_script( 'dekiru-scripts', get_template_directory_uri() . '/js/min/scripts.min.js', array(), null, true );
-
+	wp_enqueue_style( 'dekiru-style', get_stylesheet_uri() );
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

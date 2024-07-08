@@ -1,5 +1,5 @@
 /*!
-Theme Name: Dekiru
+Theme Name: Foxy Voxel
 Author: jake / dekiru
 Author URI: https://dekiru.uk
 Description: WP theme
@@ -27,13 +27,20 @@ Text Domain: dekiru
 @import 'navigation/navigation';
 
 @import
-	'modules/accessibility',
-	'modules/alignments',
-	'modules/clearings';
+	'modules/accessibility';
+	// 'modules/alignments',
+	// 'modules/clearings';
 
 @import 
 	'layout/base',
 	'layout/header',
-	'layout/projects',
+	'layout/social',
+	'layout/home',
+	'layout/about',
+	'layout/games',
+	'layout/game-single',
+	'layout/careers',
+	'layout/career-single',
+	'layout/contact',
 	'layout/footer';
 	

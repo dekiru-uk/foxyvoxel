@@ -1,0 +1,15 @@
+.social-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 0;
+
+    img {
+        height: 22px;
+        width: auto;
+    }
+
+    span {
+        display: none;
+    }
+}

@@ -3,12 +3,14 @@
 const autoprefixer = require('autoprefixer');
 const browsersync = require('browser-sync').create();
 const browserify = require('browserify');
-const gulp = require('gulp');  
+const gulp = require('gulp');
+const { src, dest } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const cleanCss = require('gulp-clean-css');
-const sourcemaps = require('gulp-sourcemaps');
+// const sourcemaps = require('gulp-sourcemaps');
 const minify = require('gulp-minify');
+const concat = require('gulp-concat');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const log = require('gulplog');
@@ -20,7 +22,7 @@ const touch = require('gulp-touch-cmd');
 
 function css() {
   return gulp
-    .src('./sass/**/*.scss')
+    .src('./sass/**/*.scss', { sourcemaps: true })
     .pipe(plumber()) // Prevent termination on error
     .pipe(sass({
       indentType: 'tab',
@@ -32,9 +34,9 @@ function css() {
         overrideBrowserslist: ['last 2 versions']
       })
     ]))
-    .pipe(sourcemaps.init())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./'))
+    // .pipe(sourcemaps.init())
+    // .pipe(sourcemaps.write())
+    .pipe(gulp.dest('./', { sourcemaps: true }))
     .pipe(browsersync.stream())
     .pipe(touch());
     done();
@@ -52,29 +54,19 @@ function cssBuild() {
     ]))
     .pipe(groupmq())
     .pipe(cleanCss())
+    .pipe(minify())
     .pipe(gulp.dest('./'))
     .pipe(touch());
     done();
 };
 
 function scripts() {
-  var b = browserify({
-      entries: './js/main.js',
-      debug: true,
-    });
-
-    return b.bundle()
-      .pipe(source('scripts.min.js'))
-      .pipe(plumber()) // Prevent termination on error
-      .pipe(buffer())
-      .pipe(sourcemaps.init({loadMaps: true}))
-          // Add transformation tasks to the pipeline here.
-          // .pipe(uglify())
-          .on('error', log.error)
-      .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('./js/min/'))
-      .pipe(touch());
-      done();
+  return gulp
+    .src('./js/*.js', { sourcemaps: true }) // https://gulpjs.com/docs/en/api/src/#sourcemaps
+    .pipe(concat('./scripts.min.js'))
+    .pipe(uglify())
+    .pipe(dest('./js/min/', { sourcemaps: '.' }));
+    done();
 };
 
 // Transpile, concatenate and minify scripts
@@ -99,8 +91,8 @@ function scriptsBuild() {
 // BrowserSync
 function browserSyncInit(done) {
   browsersync.init({
-    proxy: 'http://foxyvoxel.local/',
-    host: 'foxyvoxel.local',
+    proxy: 'http://foxyvoxel.wp/',
+    host: 'foxyvoxel.wp',
     open: 'external',
     browser: 'microsoft edge',
     online: true,
