@@ -1,28 +1,68 @@
 .main-navigation {
+	background-color: rgba(#252D31, 0.25);
+    text-transform: uppercase;
+    font-weight: 700;
+
     .logo {
-        width: 113px;
         height: 113px;
-        display: block;
-        background-color: $dark_grey;
-        border-bottom: 4px solid $color_primary;
+        display: flex;
         transition: all 0.25s ease-in-out;
+        background-color: rgba($dark_grey, 0.66);
+        color: $color_secondary;
+        position: relative;
+
+        &:hover {
+            color: $color_primary;
+
+            &:after {
+                width: 100%;
+            }
+        }
         
         @include breakpoint($mediumlarge) {
             margin-right: auto;
         }
 
-        &:hover {
-            background-color: $color_secondary;
+        .logo-image {
+            background-color: $dark_grey;
+            // border-bottom: 4px solid $color_primary;
         }
 
-        img {
-            width: 100%;
-            height: auto;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            height: 4px;
+            width: 113px;
+            background-color: $color_primary;
+            transition: all 0.25s ease-in-out;
         }
+    }
+
+    .logo-word-marquee {
+        font-family: 'RetroGaming';
+        text-transform: uppercase;
+        font-size: 32px;
+        line-height: 0.9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 28px;
     }
 
     .nav-menu {
         display: flex;
         gap: 20px;
+
+        a {
+            color: $color_secondary;
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+                color: $color_primary;
+            }
+        }
     }
 }

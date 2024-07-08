@@ -32,7 +32,14 @@
 
 		<nav id="site-navigation" class="main-navigation">
 			<a href="<?php echo home_url(); ?>" title="Return to the homepage" class="logo">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/foxyvoxel-logo-header.png" width="113" height="113" alt="<?php echo get_bloginfo('name'); ?>">
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/foxyvoxel-logo-header.png"
+					width="113" height="113" alt="<?php echo get_bloginfo('name'); ?>"
+					class="logo-image"
+				>
+
+				<div class="logo-word-marquee">
+					Foxy<br>Voxel
+				</div>
 			</a>
 
 			<?php
