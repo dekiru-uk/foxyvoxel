@@ -79,6 +79,11 @@
                 padding: 0 18px;
             }
 
+            &:visited,
+            &:active {
+                color: $color_secondary;
+            }
+
             &:hover {
                 color: $color_primary;
             }
