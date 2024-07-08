@@ -1,26 +1,93 @@
 .site-footer {
-    background: $dark_grey;
-    color: $off_white;
+    margin-top: auto;
+    color: $dark_grey;
+    background-color: $off_white;
+    font-size: 18px;
 
     display:flex;
+    gap: 40px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    @include breakpoint($medium) {
-        @include font-size(0.75);
-    }
+    padding-top: 100px;
 
     p {
         margin: 0;
     }
 
     a {
-        color: $color_primary;
+        color: $dark_grey;
         transition: color 0.5s;
+        text-decoration: none;
+        font-weight: 700;
 
         &:hover {
             color: $color_primary;
+        }
+    }
+
+    .logo {
+        font-family: 'RetroGaming';
+        font-size: 48px;
+        text-transform: uppercase;
+        line-height: 0.9;
+        -webkit-font-smoothing: none;
+    }
+    
+    .logo,
+    .social
+    .menu-footer-menu-container {
+        width: 100%;
+        max-width: $max_width;
+        margin: 0 auto;
+    }
+
+    .menu-footer-menu-container {
+        text-transform: uppercase;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: row;
+            gap: 20px;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-item {
+            &:not(:first-of-type) {
+                
+                &:before {
+                    content: '|';
+                    color: #9D968C;
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+
+    .information {
+        width: 100%;
+        background-color: #EEE4D7;
+        display: flex;
+        gap: 20px;
+        padding: 40px;
+        justify-content: center;
+
+        p {
+            margin-bottom: 0;
+
+            &:not(:first-of-type) {
+                
+                &:before {
+                    content: '|';
+                    color: #9D968C;
+                    margin-right: 20px;
+                }
+            }
         }
     }
 }

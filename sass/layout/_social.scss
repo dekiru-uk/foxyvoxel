@@ -9,10 +9,10 @@
     img {
         height: 22px;
         width: auto;
-        filter: invert(93%) sepia(18%) saturate(159%) hue-rotate(350deg) brightness(98%) contrast(90%);
     }
-
+    
     a {
+        filter: brightness(0) saturate(100%) invert(93%) sepia(18%) saturate(159%) hue-rotate(350deg) brightness(98%) contrast(90%);
         transition: all 0.25s ease-in-out;
 
         &:hover {
@@ -22,5 +22,20 @@
 
     span {
         display: none;
+    }
+
+    .site-footer & {
+        img {
+            height: 40px;
+        }
+        
+        a {
+            filter: brightness(0) saturate(100%) invert(52%) sepia(96%) saturate(900%) hue-rotate(339deg) brightness(103%) contrast(98%);
+            transition: all 0.25s ease-in-out;
+            
+            &:hover {
+                filter: brightness(0) saturate(100%) invert(9%) sepia(5%) saturate(452%) hue-rotate(169deg) brightness(99%) contrast(86%); // dark grey
+            }
+        }
     }
 }

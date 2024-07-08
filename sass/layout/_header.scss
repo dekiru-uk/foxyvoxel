@@ -33,7 +33,7 @@
             display: block;
             position: absolute;
             left: 0;
-            bottom: -4px;
+            bottom: 0;
             height: 4px;
             width: 113px;
             background-color: $color_primary;
@@ -46,6 +46,7 @@
         text-transform: uppercase;
         font-size: 32px;
         line-height: 0.9;
+        -webkit-font-smoothing: none;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -53,15 +54,55 @@
     }
 
     .nav-menu {
-        display: flex;
-        gap: 20px;
+        display: none;
+        // gap: 20px;
+        height: 100%;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+        @include breakpoint($mediumlarge) {
+            display: flex;
+            margin-right: 20px;
+        }
 
         a {
             color: $color_secondary;
-            transition: all 0.25s ease-in-out;
+            transition: color 0.25s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 0 10px;
+
+            @include breakpoint($mediumlarge) {
+                padding: 0 18px;
+            }
 
             &:hover {
                 color: $color_primary;
+            }
+        }
+
+        li {
+            &.current-menu-item {
+                a {
+                    color: $dark_grey;
+                    background-color: $color_secondary;
+
+                    &:before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: 50%;
+                        bottom: 0;
+                        transform: translate(-50%, 100%);
+                        height: 16px;
+                        width: 24px;
+                        background-color: $color_secondary;
+                        clip-path: $pixel_arrow;
+                    }
+                }
             }
         }
     }

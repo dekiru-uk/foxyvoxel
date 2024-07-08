@@ -2,12 +2,22 @@
 	box-sizing: border-box;
 }
 
+::selection {
+	color: $off_white;
+	background: rgba($color_primary, 0.85);
+}
+
 body {
-    background: $dark_grey;
+	background: $dark_grey;
+	min-height: 100vh;
 
 	&.menu-active {
 		overflow: hidden;
 		// position: fixed;
+	}
+
+	&.admin-bar {
+		min-height: calc(100vh - 32px);
 	}
 }
 
@@ -21,6 +31,17 @@ img {
 
 strong {
 	font-weight: 700;
+}
+
+.site {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	body.admin-bar & {
+		min-height: calc(100vh - 32px);
+	}
 }
 
 // IE

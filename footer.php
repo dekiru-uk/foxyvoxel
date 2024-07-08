@@ -14,14 +14,23 @@
 	</div><!-- #content -->
 
 	<footer class="site-footer" role="contentinfo">
-		<div class="footer-content">
-			<div class="logo">
-				
-			</div>
+		<div class="logo">
+			Foxy Voxel
+		</div>
 
-			<div class="copy">
-				<?php echo get_field('footer_copy','options'); ?>
-			</div>
+		<?php get_template_part( 'template-parts/partial', 'social' ); ?>
+
+		<?php
+			wp_nav_menu( array(
+				'theme_location' => 'footer',
+				'menu_id'        => 'footer-menu',
+				'menu_class'	=> 	'menu'
+			) );
+		?>
+
+		<div class="information">
+			<p>&copy;<?php echo date('Y'); ?> Foxy Voxel</p>
+			<p>Site design by <a href="https://www.fullyillustrated.com" title="Game UI. Game Art. Website Design. Illustration. Branding. Animation and much more… Fully Illustrated">Fully Illustrated</a> Build by <a href="https://dekiru.uk" title="Dekiru. Website design and build for indie games studios.">Dekiru</a></p>
 		</div>
 	</footer>
 
