@@ -1,10 +1,10 @@
-<?php if( have_rows('social_links', 'option') ):
+<?php if( have_rows('social_networks', 'option') ):
     echo '<ul class="social-links">';
 
-    while( have_rows('social_links', 'option') ): the_row();
-        $service = get_sub_field('platform');
+    while( have_rows('social_networks', 'option') ): the_row();
+        $service = get_sub_field('name');
         $icon = get_sub_field('icon');
-        $url = get_sub_field('link');
+        $url = get_sub_field('url');
 
         if ($icon != '') :
             echo '<li class="platform"><a href="' . $url . '">';
