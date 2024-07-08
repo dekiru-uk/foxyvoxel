@@ -1,5 +1,5 @@
 {
-  "name": "dekiru",
+  "name": "foxyvoxel",
   "version": "1.0.0",
   "main": "./js/main.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jake74/dekiru.git"
+    "url": "git+ssh://git@github.com/dekiru-uk/foxyvoxel.git"
   },
   "author": "",
   "license": "ISC",
@@ -19,20 +19,19 @@
     "gulp": "^5.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
-    "gulp-group-css-media-queries": "^1.2.2",
+    "@mozaic-ds/postcss-media-queries-packer-on-demand": "^1.75.0",
     "gulp-minify": "^3.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^10.0.0",
-    "gulp-sass": "^5.0.0",
+    "gulp-sass": "^5.1.0",
     "gulp5-sass-plugin": "^1.0.0",
-    "gulp-sourcemaps": "^3.0.0",
     "gulp-strip-css-comments": "^3.0.0",
     "gulp-touch-cmd": "0.0.1",
     "gulp-uglify": "^3.0.2",
     "gulplog": "^2.2.0",
     "node-gyp": "10.1.0",
-    "postcss": "^8.4.38",
-    "sass": "^1.76.0",
+    "postcss": "^8.4.39",
+    "sass": "^1.77.6",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   },

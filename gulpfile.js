@@ -8,7 +8,6 @@ const { src, dest } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const cleanCss = require('gulp-clean-css');
-// const sourcemaps = require('gulp-sourcemaps');
 const minify = require('gulp-minify');
 const concat = require('gulp-concat');
 const source = require('vinyl-source-stream');
@@ -16,7 +15,7 @@ const buffer = require('vinyl-buffer');
 const log = require('gulplog');
 const uglify = require('gulp-uglify');
 const plumber = require('gulp-plumber');
-const groupmq = require('gulp-group-css-media-queries');
+const groupmq = require('@mozaic-ds/postcss-media-queries-packer-on-demand');
 const touch = require('gulp-touch-cmd');
 
 
