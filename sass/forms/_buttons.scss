@@ -1,22 +1,78 @@
 button,
+.button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, .8);
-	@include font-size(0.75);
-	line-height: 1;
-	padding: .6em 1em .4em;
+	background: $color_primary;
+	color: $off_white;
+	font-size: 22px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	line-height: 0.9;
+	min-height: 54px;
+	min-width: 224px;
+	padding: 20px;
+
+	display: inline-flex;
+	// justify-content: center;
+	align-items: center;
+
+	transition: all .5s;
+	filter: drop-shadow(0 0 5px rgba($color_primary, 0.5));
 
 	&:hover {
-		border-color: $color__border-button-hover;
+		color: $off_white;
 	}
 
 	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
+	&:focus,
+	&:visited {
+		color: $off_white;
+		outline: none;
 	}
+
+	&::before {
+		@extend %test;
+			bottom: -15px;
+			height: 15px;
+			width: 100%;
+			left: 8px;
+			transform: skewX(45deg);
+			background-color: darken($color_primary, 20%);
+		}
+	
+		&::after {
+			@extend %test;
+			right: -15px;
+			height: 100%;
+			width: 15px;
+			bottom: -8px;
+			transform: skewY(45deg);
+			background-color: darken($color_primary, 20%);
+		}
+	
+		&:active {
+			margin-left: 10px;
+			margin-top: 10px;
+
+			&::before {
+				bottom: -5px;
+				height: 5px;
+				left: 3px;
+			}
+			
+		&::after {
+				right: -5px;
+				width: 5px;
+				bottom: -3px;
+			}	
+		}
 }
+
+%test {
+	position: absolute;
+	content: '';
+	transition: all .5s;
+}
+  

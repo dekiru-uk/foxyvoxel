@@ -46,6 +46,8 @@
         text-transform: uppercase;
         font-size: 32px;
         line-height: 0.9;
+        font-weight: 400;
+        letter-spacing: -0.05em;
         -webkit-font-smoothing: none;
         display: flex;
         align-items: center;
@@ -53,7 +55,7 @@
         padding: 20px 28px;
     }
 
-    .nav-menu {
+    .menu {
         display: none;
         // gap: 20px;
         height: 100%;

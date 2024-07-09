@@ -1,0 +1,9 @@
+.newsletter {
+    background-color: $dark_grey;
+    color: $off_white;
+    padding: 60px 0 90px;
+
+    @include breakpoint($mediumlarge) {
+        padding: 90px 0 120px;
+    }
+}

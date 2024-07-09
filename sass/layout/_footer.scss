@@ -90,6 +90,20 @@
         gap: 20px;
         padding: 40px;
         justify-content: center;
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: calc(50vw + calc($max_width / 3));
+            width: 100px;
+            height: 65px;
+            transform: translateY(-100%);
+            background: url(assets/images/pixel-foxy.svg) center top no-repeat;
+            background-size: cover;
+        }
 
         p {
             margin-bottom: 0;

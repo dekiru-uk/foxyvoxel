@@ -1,0 +1,55 @@
+.intro {
+    .section-content {
+        display: flex;
+        align-items: center;
+    }
+
+    .intro-content {
+        width: 50%;
+        padding: 0 56px;
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    .intro-subtitle,
+    .intro-title {
+        font-family: 'RetroGaming';
+        line-height: 0.825;
+        text-transform: uppercase;
+        -webkit-font-smoothing: none;
+        margin-bottom: 25px;
+    }
+
+    .intro-subtitle {
+        color: $color_primary;
+        padding-left: 10px;
+    }
+
+    .intro-title {
+        font-size: 176px;
+        font-weight: 400;
+        letter-spacing: -0.05em;
+    }
+
+    .copy {
+        opacity: 0.6;
+    }
+
+    .intro-image {
+        width: 50%;
+        position: relative;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: -50%;
+            height: 50%;
+            width: 180%;
+            z-index: -1;
+            background-image: radial-gradient(rgba($off_white, 0.25) 0, rgba($dark_grey, 0) 70%);
+            pointer-events: none;
+        }
+    }
+}

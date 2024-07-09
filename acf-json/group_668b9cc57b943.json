@@ -73,8 +73,8 @@
             "sub_fields": [
                 {
                     "key": "field_668c77dc010bb",
-                    "label": "Subititle",
-                    "name": "Subititle",
+                    "label": "Subtitle",
+                    "name": "subtitle",
                     "aria-label": "",
                     "type": "text",
                     "instructions": "",
@@ -171,6 +171,31 @@
                     "allow_archives": 1,
                     "multiple": 0,
                     "allow_null": 0
+                },
+                {
+                    "key": "field_668c91762187e",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "preview_size": "medium"
                 }
             ]
         }
@@ -195,5 +220,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720481892
+    "modified": 1720488318
 }

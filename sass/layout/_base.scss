@@ -44,6 +44,12 @@ strong {
 	}
 }
 
+.section-content {
+	width: 100%;
+	max-width: $max_width;
+	margin: 0 auto;
+}
+
 // IE
 .image-object-fit {
 	background-size: contain;
