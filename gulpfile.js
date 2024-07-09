@@ -33,59 +33,50 @@ function css() {
         overrideBrowserslist: ['last 2 versions']
       })
     ]))
-    // .pipe(sourcemaps.init())
-    // .pipe(sourcemaps.write())
     .pipe(gulp.dest('./', { sourcemaps: true }))
     .pipe(browsersync.stream())
     .pipe(touch());
-    done();
 };
 
 function cssBuild() {
   return gulp
-    .src('./sass/style.scss')
-    .pipe(sass({includePaths: ['sass']}))
+    .src('./sass/**/*.scss', { sourcemaps: true })
+    .pipe(plumber()) // Prevent termination on error
+    .pipe(sass({
+      indentType: 'tab',
+      indentWidth: 1,
+      outputStyle: 'expanded', // Expanded so that our CSS is readable
+    })).on('error', sass.logError)
     .pipe(postcss([
       autoprefixer({
-        overrideBrowserslist: ['last 2 versions'],
-        cascade: false,
+        overrideBrowserslist: ['last 2 versions']
       })
     ]))
-    .pipe(groupmq())
-    .pipe(cleanCss())
-    .pipe(minify())
-    .pipe(gulp.dest('./'))
+    .pipe(gulp.dest('./', { sourcemaps: true }))
     .pipe(touch());
-    done();
 };
 
 function scripts() {
   return gulp
     .src('./js/*.js', { sourcemaps: true }) // https://gulpjs.com/docs/en/api/src/#sourcemaps
+    .pipe(plumber()) // Prevent termination on error
     .pipe(concat('./scripts.min.js'))
+    .pipe(buffer())
     .pipe(uglify())
-    .pipe(dest('./js/min/', { sourcemaps: '.' }));
-    done();
+    .pipe(dest('./js/min/', { sourcemaps: '.' }))
+    .pipe(browsersync.stream());
 };
 
 // Transpile, concatenate and minify scripts
 function scriptsBuild() {
-  var b = browserify({
-      entries: './js/main.js',
-      debug: false,
-    });
-
-    return b.bundle()
-      .pipe(source('scripts.min.js'))
-      .pipe(plumber()) // Prevent termination on error
-      .pipe(buffer())
-      .pipe(sourcemaps.init({loadMaps: false}))
-          // Add transformation tasks to the pipeline here.
-          .pipe(uglify())
-          .on('error', log.error)
-      .pipe(gulp.dest('./js/min/'))
-      .pipe(touch());
-}
+  return gulp
+    .src('./js/*.js', { sourcemaps: false }) // https://gulpjs.com/docs/en/api/src/#sourcemaps
+    .pipe(plumber()) // Prevent termination on error
+    .pipe(concat('./scripts.min.js'))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(dest('./js/min/'));
+};
 
 // BrowserSync
 function browserSyncInit(done) {
@@ -99,14 +90,13 @@ function browserSyncInit(done) {
   });
 }
 
-// BrowserSync Reload
-function browserSyncReload(done) {
-  browsersync.reload();
-  done();
-}
-
 // Watch files
 function watchFiles() {
+  // watch for php changes
+  gulp.watch('**/*.php').on('change', function(file) {
+    browsersync.reload();
+  });
+
   gulp.watch("./sass/**/*", css);
   gulp.watch([
     "./js/**/*",
@@ -114,8 +104,6 @@ function watchFiles() {
     ], scripts);
   gulp.watch(
     [
-      "./*.php",
-      "./**/*.php",
       "./sass/**/*",
       "./js/min/*"
     ],
