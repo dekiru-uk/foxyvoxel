@@ -37,10 +37,10 @@ function dekiru_pingback_header() {
 add_action( 'wp_head', 'dekiru_pingback_header' );
 
 // Update CSS within in Admin
-function admin_style() {
-  wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin.css');
-}
-add_action('admin_enqueue_scripts', 'admin_style');
+// function admin_style() {
+//   wp_enqueue_style('admin-styles', get_template_directory_uri().'/admin.css');
+// }
+// add_action('admin_enqueue_scripts', 'admin_style');
 
 // ACF options page
 if( function_exists('acf_add_options_page') ) {
