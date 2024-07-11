@@ -54,5 +54,10 @@
             background-image: radial-gradient(rgba($off_white, 0.25) 0, rgba($dark_grey, 0) 70%);
             pointer-events: none;
         }
+
+        img {
+            max-width: unset;
+            position: absolute;
+        }
     }
 }

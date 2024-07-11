@@ -31,6 +31,9 @@ input[type="submit"] {
 		color: $off_white;
 		outline: none;
 	}
+}
+
+.fv-button {
 
 	&::before {
 		@extend %test;

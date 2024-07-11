@@ -50,13 +50,6 @@ strong {
 	margin: 0 auto;
 }
 
-// IE
-.image-object-fit {
-	background-size: contain;
-	background-position: center center;
-	background-repeat: no-repeat;
-	
-	img {
-		opacity: 0;
-	}
+.mfp-wrap {
+    backdrop-filter: blur(15px);
 }
