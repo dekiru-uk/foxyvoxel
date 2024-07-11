@@ -12,19 +12,23 @@
 <div class="intro">
     <div class="section-content">
         <div class="intro-content">
-            <p class="intro-subtitle"><?php echo $subtitle; ?></p>
-            <h1 class="intro-title"><?php echo $title; ?></h1>
-            <span class="copy"><?php echo $copy; ?></span>
+            <div class="intro-text">
+                <p class="intro-subtitle"><?php echo $subtitle; ?></p>
+                <h1 class="intro-title"><?php echo $title; ?></h1>
+                <span class="copy"><?php echo $copy; ?></span>
 
-            <a href="<?php echo $button_link; ?>" class="button"><?php echo $button_text; ?></a>
+                <a href="<?php echo $button_link; ?>" class="button"><?php echo $button_text; ?></a>
+            </div>
         </div>
 
         <div class="intro-image">
-            <img src="<?php echo $image['url']; ?>"
-                alt="<?php echo $image['alt']; ?>"
-                width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>"
-                loading="lazy"
-            >
+            <div class="fox-in-a-box">
+                <img src="<?php echo $image['url']; ?>"
+                    alt="<?php echo $image['alt']; ?>"
+                    width="<?php echo $image['width']; ?>" height="<?php echo $image['height']; ?>"
+                    loading="lazy"
+                >
+            </div>
         </div>
     </div>
 </div>

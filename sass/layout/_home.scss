@@ -1,16 +1,29 @@
 .intro {
-    overflow: hidden;
+    // overflow: hidden;
     
     .section-content {
         display: flex;
-        align-items: center;
+        align-items: stretch;
+        // padding: 190px 0 200px;
+        padding: clamp(50px, 10vw, 190px) 0;
+        max-width: unset;
     }
 
     .intro-content {
-        width: 50%;
+        width: 50vw;
         padding: 0 56px;
         font-size: 22px;
         line-height: 32px;
+        height: 100%;
+        // outline: 1px dotted green;
+        // background-color: rgba(green, 0.2);
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .intro-text {
+        max-width: calc($max_width / 2);
+        // outline: 1px dotted red;
     }
 
     .intro-subtitle,
@@ -28,7 +41,8 @@
     }
 
     .intro-title {
-        font-size: 176px;
+        // font-size: 176px;
+        font-size: clamp(6.25rem, 3.0833rem + 8.4444vw, 11rem); // 100px - 176px
         font-weight: 400;
         letter-spacing: -0.05em;
     }
@@ -38,26 +52,61 @@
     }
 
     .intro-image {
-        width: 50%;
+        width: 50vw;
         padding: 0 56px;
+        display: block;
+        // outline: 1px dotted #faf;
         position: relative;
+    }
+
+    .fox-in-a-box {
+        position: absolute;
+        // top: -502px;
+        // top: clamp(-100px, -50vw, -502px);
+        top: -27vw;
+        left: 0;
+        right: 0;
+        // height: calc(100% + 600px);
+        z-index: 10;
+        display: flex;
+        align-items: flex-start;
+        // overflow-x: hidden;
+        padding-left: 20px;
+        overflow: hidden;
+        aspect-ratio: 884 / 1228;
+        // outline: 1px dotted yellow;
 
         &:after {
             content: '';
             display: block;
             position: absolute;
-            bottom: 0;
-            left: -50%;
-            height: 50%;
-            width: 180%;
+            // bottom: 0;
+            bottom: 10vw;
+            left: 0;
+            // height: 50%;
+            // width: 180%;
+            width: calc(70vw);
+            aspect-ratio: 4 / 3;
             z-index: -1;
             background-image: radial-gradient(rgba($off_white, 0.25) 0, rgba($dark_grey, 0) 70%);
             pointer-events: none;
         }
 
         img {
-            max-width: unset;
             position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 884px;
+            height: 100%;
+            object-fit: contain;
+            object-position: right center;
+            // background-color: rgba(#faf, 0.2);
+
+            // max-width: 978px;
+            // width: calc(100vw / 3 * 2);
+            height: auto;
+            aspect-ratio: 884 / 1228;
         }
     }
 }

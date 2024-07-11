@@ -5,6 +5,13 @@ jQuery.event.special.touchstart = {
   }
 };
 
+gsap.to('.fox-in-a-box', {
+  scrollTrigger: '.fox-in-a-box img', // start the animation when ".box" enters the viewport (once)
+  // x: -500
+  // x: -1000
+});
+
+
 // rolling start!
 $(document).ready(function($){
   if ('ontouchstart' in window || 'ontouch' in window) {
