@@ -3,8 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    aspect-ratio: 16/9;
     margin-bottom: -28px;
+    height: 60vh;
+    
+    @include breakpoint($mediumlarge) {
+        height: unset;
+        aspect-ratio: 16/9;
+    }
     
     .background-image {
         position: absolute;
@@ -38,21 +43,41 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        padding-top: 100px;
     }
 
     .game-logo {
-        width: 94%;
-        height: 50%;
+        width: 70%;
+        max-width: 400px;
+        height: auto;
+        
         object-fit: contain;
-        margin-bottom: 80px;
+        // margin-bottom: 80px;
+        margin-bottom: clamp(20px, 5vw, 80px);
         filter: drop-shadow(5px 5px 46px rgba(black, 0.75));
+
+        @include breakpoint($mediumlarge) {
+            max-width: unset;
+            width: 90%;
+            height: 50%;
+        }
     }
 
     .actions {
         display: flex;
+        flex-direction: column;
         gap: 10px;
         justify-content: center;
         align-items: center;
+        transform: scale(0.8);
+
+        @include breakpoint($medium) {
+            flex-direction: row;
+        }
+        @include breakpoint($large) {
+            transform: scale(1);
+
+        }
 
         .trailer,
         .page-link {
