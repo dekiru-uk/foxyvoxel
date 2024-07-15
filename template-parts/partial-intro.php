@@ -17,7 +17,7 @@
                 <h1 class="intro-title"><?php echo $title; ?></h1>
                 <span class="copy"><?php echo $copy; ?></span>
 
-                <a href="<?php echo $button_link; ?>" class="button"><?php echo $button_text; ?></a>
+                <a href="<?php echo $button_link; ?>" class="fv-button"><?php echo $button_text; ?></a>
             </div>
         </div>
 

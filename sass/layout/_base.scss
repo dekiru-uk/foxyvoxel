@@ -54,3 +54,19 @@ strong {
 .mfp-wrap {
     backdrop-filter: blur(15px);
 }
+
+:root {
+    --swiper-pagination-bottom: 30px;
+    --swiper-pagination-bullet-height:8px;
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-pagination-bullet-inactive-color: #{$color_primary};
+    --swiper-pagination-color: #{$color_primary};
+    --swiper-theme-color: #{$color_primary};
+    --swiper-pagination-bullet-horizontal-gap: 0;
+	--swiper-pagination-bullet-inactive-color: #{$color_primary};
+	--swiper-theme-color: #{$color_primary};
+	--swiper-pagination-bullet-horizontal-gap: 1px;
+	--swiper-pagination-bullet-inactive-opacity: 0.32;
+	--swiper-pagination-bullet-border-radius: 0;
+	// --swiper-pagination-color: $color_primary;
+}

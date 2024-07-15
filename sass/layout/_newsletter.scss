@@ -6,4 +6,20 @@
     @include breakpoint($mediumlarge) {
         padding: 90px 0 120px;
     }
+
+    .section-content {
+        display: flex;
+        gap: calc($grip-gap * 4);
+        align-items: stretch;
+        padding: 0 calc($grip-gap /2);
+        max-width: unset;
+
+        > * {
+            flex: 0 1 100%;
+
+            @include breakpoint($mediumlarge) {
+                flex: 0 1 50%;
+            }
+        }
+    }
 }

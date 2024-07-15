@@ -13,6 +13,49 @@ gsap.to('.fox-in-a-box img', {
   duration: 1
 });
 
+const heroSlides = new Swiper('.hero-slides', {
+  slidesPerView: 1,
+  loop: false,
+  speed: 500,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: true,
+  // },
+  navigation: {
+    nextEl: '.image-text-button-next',
+    prevEl: '.image-text-button-prev',
+  },
+  pagination: {
+    el: '.slide-pagination',
+    clickable: 'true'
+  },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+});
+
+const homeNewsSlides = new Swiper('.news-scroll', {
+  slidesPerView: 1,
+  loop: false,
+  speed: 500,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: true,
+  },
+  navigation: {
+    nextEl: '.button-next',
+    prevEl: '.button-prev',
+  },
+  pagination: {
+    el: '.slide-pagination',
+    clickable: 'false'
+  },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+});
 
 // rolling start!
 $(document).ready(function($){
