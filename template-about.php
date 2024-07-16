@@ -28,7 +28,9 @@ get_header();
 				<div class="section-content">
 					<p class="subtitle"><?php echo $subtitle; ?></p>
 					<h1 class="title"><?php echo $title; ?></h1>
-					<?php echo $copy; ?>
+					<div class="copy">
+						<?php echo $copy; ?>
+					</div>
 				</div>
 			</section>
 
@@ -53,7 +55,9 @@ get_header();
 								</div>
 								<h2 class="name"><?php echo $name; ?></h2>
 								<p class="position"><?php echo $position; ?></p>
-								<?php echo $bio; ?>
+								<div class="bio">
+									<?php echo $bio; ?>
+								</div>
 								
 							</div>
 						<?php endwhile; ?>

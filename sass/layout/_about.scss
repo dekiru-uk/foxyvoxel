@@ -3,13 +3,16 @@ body.page-template-template-about {
 }
 
 .about-intro {
-    text-align: center;
     position: relative;
+    text-align: center;
+    font-size: clamp(1rem, 0.8333rem + 0.4444vw, 1.25rem); // 16px - 20px
     background-image: linear-gradient(to bottom, $black, $dark_grey);
-    padding: 100px 0 300px;
+    padding: 280px 0 300px;
 
     .section-content {
         padding: 0 calc($grid-gap / 2);
+        position: relative;
+        z-index: 2;
     }
 
     .background-image {
@@ -17,10 +20,33 @@ body.page-template-template-about {
         z-index: 1;
         filter: grayscale(100%);
         opacity: 0.25;
+        pointer-events: none;
         
         img {
             mix-blend-mode: overlay; 
         }
+    }
+
+    .subtitle {
+        color: $color_primary;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1;
+        margin-bottom: 0;
+    }
+
+    .title {
+        text-transform: uppercase;
+        font-size: clamp(4rem, 2.75rem + 3.3333vw, 5.875rem);
+        line-height: 1;
+        margin-bottom: 20px;
+    }
+
+    .copy {
+        max-width: 720px;
+        margin: 0 auto;
+        opacity: 0.6;
     }
 }
 
@@ -38,8 +64,11 @@ body.page-template-template-about {
     }
 
     .team-member {
+        max-width: 360px;
         padding: 15px;
         background-color: $black;
+        text-align: center;
+        font-size: clamp(1rem, 0.8333rem + 0.4444vw, 1.25rem); // 16px - 20px
 
         @include breakpoint($medium) {
             width: calc((100% / 2) - $grid-gap + ($grid-gap / 2));
@@ -54,15 +83,46 @@ body.page-template-template-about {
         }
 
         .photo {
+            position: relative;
+            margin-bottom: calc($grid-gap * 2);
 
             img {
                 width: 100%;
                 height: auto;
             }
         }
+
+        .social-link {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            max-width: 82px;
+            width: 25%;
+            aspect-ratio: 1/1;
+            background: url(assets/images/stepped-corner.svg) right bottom no-repeat;
+            background-size: cover;
+        }
+
+        .name {
+            font-size: clamp(1.75rem, 1.5rem + 0.6667vw, 2.125rem); // 28px - 34px
+            margin-bottom: 0;
+            line-height: 0.9;
+        }
+
+        .position {
+            color: $color_primary;
+            font-size: clamp(1.125rem, 0.875rem + 0.6667vw, 1.5rem);
+            font-weight: 700;
+            line-height: 0.9;
+        }
+
+        .bio {
+            opacity: 0.6;
+        }
     }
 }
 
 .careers-banner {
     text-align: center;
+    background-color: $dark_grey;
 }
