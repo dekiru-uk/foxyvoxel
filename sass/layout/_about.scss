@@ -1,0 +1,68 @@
+body.page-template-template-about {
+    background-color: $black;
+}
+
+.about-intro {
+    text-align: center;
+    position: relative;
+    background-image: linear-gradient(to bottom, $black, $dark_grey);
+    padding: 100px 0 300px;
+
+    .section-content {
+        padding: 0 calc($grid-gap / 2);
+    }
+
+    .background-image {
+        background-color: $black;
+        z-index: 1;
+        filter: grayscale(100%);
+        opacity: 0.25;
+        
+        img {
+            mix-blend-mode: overlay; 
+        }
+    }
+}
+
+.the-team {
+    padding-bottom: calc($grid-gap * 4);
+    margin-top: -300px;
+    position: relative;
+    z-index: +1;
+
+    .section-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $grid-gap;
+    }
+
+    .team-member {
+        padding: 15px;
+        background-color: $black;
+
+        @include breakpoint($medium) {
+            width: calc((100% / 2) - $grid-gap + ($grid-gap / 2));
+        }
+
+        @include breakpoint($mediumlarge) {
+            width: calc((100% / 3) - $grid-gap + ($grid-gap / 3));
+        }
+
+        @include breakpoint($large) {
+            width: calc((100% / 4) - $grid-gap + ($grid-gap / 4));
+        }
+
+        .photo {
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+.careers-banner {
+    text-align: center;
+}

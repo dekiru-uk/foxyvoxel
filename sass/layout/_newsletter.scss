@@ -9,9 +9,9 @@
 
     .section-content {
         display: flex;
-        gap: calc($grip-gap * 4);
+        gap: calc($grid-gap * 4);
         align-items: stretch;
-        padding: 0 calc($grip-gap /2);
+        padding: 0 calc($grid-gap /2);
         max-width: unset;
 
         > * {
