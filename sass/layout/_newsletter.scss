@@ -12,7 +12,7 @@
         gap: calc($grid-gap * 4);
         align-items: stretch;
         padding: 0 calc($grid-gap /2);
-        max-width: unset;
+        // max-width: unset;
 
         > * {
             flex: 0 1 100%;
@@ -21,5 +21,11 @@
                 flex: 0 1 50%;
             }
         }
+    }
+}
+
+.newsletter-subscribe {
+    label {
+        display: none;
     }
 }

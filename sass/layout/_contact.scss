@@ -1,0 +1,18 @@
+.site-main.contact-us {
+    padding: 280px 0 300px;
+
+    .section-content {
+        display: flex;
+        flex-direction: column;
+        gap: $grid-gap;
+        padding: 0 calc($grid-gap / 2);
+
+        @include breakpoint($mediumlarge) {
+            flex-direction: row;
+
+            > * {
+                flex: 0 1 50%;
+            }
+        }
+    }
+}

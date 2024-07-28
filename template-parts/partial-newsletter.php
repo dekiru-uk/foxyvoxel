@@ -16,7 +16,7 @@
             <p>
                 <strong>Sign up here:</strong>
             </p>
-            <form>
+            <form class="newsletter-subscribe">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" placeholder="email address…">
                 <button type="submit" class="fv-button">Subscribe</button>

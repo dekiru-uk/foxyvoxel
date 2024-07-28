@@ -6,7 +6,7 @@ jQuery.event.special.touchstart = {
 };
 
 gsap.to('.fox-in-a-box img', {
-  scrollTrigger: '.fox-in-a-box', // start the animation when ".box" enters the viewport (once)
+  scrollTrigger: '.intro-title', // start the animation when ".box" enters the viewport (once)
   // x: -500
   x: 0,
   y: 0,
