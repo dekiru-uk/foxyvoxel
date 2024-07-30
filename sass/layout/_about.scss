@@ -8,6 +8,7 @@ body.page-template-template-about {
     font-size: clamp(1rem, 0.8333rem + 0.4444vw, 1.25rem); // 16px - 20px
     background-image: linear-gradient(to bottom, $black, $dark_grey);
     padding: 280px 0 300px;
+    overflow: hidden;
 
     .section-content {
         padding: 0 calc($grid-gap / 2);
@@ -46,7 +47,36 @@ body.page-template-template-about {
     .copy {
         max-width: 720px;
         margin: 0 auto;
-        opacity: 0.6;
+        // opacity: 0.6;
+        color: rgba($off_white, 0.6);
+    }
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 150px;
+        left: 0;
+        width: 33%;
+        min-width: 200px;
+        height: auto;
+        aspect-ratio: 1/1;
+        background: url(assets/images/pixel-foxy.svg) center no-repeat;
+        background-size: contain;
+        transform: rotate(30deg) translateX(-27%);
+
+        @include breakpoint($mediumlarge) {
+            top: 50%;
+            min-width: 300px;
+        }
+
+        @include breakpoint($large) {
+            min-width: 500px;
+            max-width: 660px;
+            top: unset;
+            bottom: -50px;
+            // transform: rotate(30deg) translate(-27%, -50%);
+        }
     }
 }
 
@@ -61,14 +91,16 @@ body.page-template-template-about {
         flex-wrap: wrap;
         justify-content: center;
         gap: $grid-gap;
+        padding: 0 calc($grid-gap / 2);
     }
 
     .team-member {
         max-width: 360px;
-        padding: 15px;
         background-color: $black;
         text-align: center;
         font-size: clamp(1rem, 0.8333rem + 0.4444vw, 1.25rem); // 16px - 20px
+        position: relative;
+        z-index: +1;
 
         @include breakpoint($medium) {
             width: calc((100% / 2) - $grid-gap + ($grid-gap / 2));
@@ -84,12 +116,27 @@ body.page-template-template-about {
 
         .photo {
             position: relative;
-            margin-bottom: calc($grid-gap * 2);
+            // margin-bottom: calc($grid-gap * 2);
+            margin-bottom: $grid-gap;
+            // padding: 15px;
+            border: 15px solid $black;
+            overflow: hidden;
 
             img {
                 width: 100%;
                 height: auto;
             }
+        }
+
+        .placeholder {
+            position: relative;
+            aspect-ratio: 1/1;
+            background-image:
+                url(assets/images/pixel-foxy.png),
+                radial-gradient(circle, rgba($off_white, 0.25) 0%, $black 100%);
+            background-size: 100px auto, cover;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
         .social-link {
@@ -101,6 +148,48 @@ body.page-template-template-about {
             aspect-ratio: 1/1;
             background: url(assets/images/stepped-corner.svg) right bottom no-repeat;
             background-size: cover;
+            text-indent: -9999px;
+            transform-origin: right bottom;
+            transition: all 0.25s ease-in-out;
+            overflow: hidden;
+
+            &:hover {
+                transform: scale(1.25);
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 70%;
+                left: 70%;
+                transform: translate(-50%, -50%);
+                width: 22px;
+                height: 22px;
+                background-size: cover;
+                filter: brightness(0) saturate(100%) invert(93%) sepia(18%) saturate(159%) hue-rotate(350deg) brightness(98%) contrast(90%);
+            }
+        }
+
+        a[href*='linkedin'] {
+            &:after {
+                background-image: url(assets/images/icon-linkedin.svg);
+            }
+        }
+        a[href*='facebook'] {
+            &:after {
+                background-image: url(assets/images/icon-facebook.svg);
+            }
+        }
+        a[href*='x.com'] {
+            &:after {
+                background-image: url(assets/images/icon-x.svg);
+            }
+        }
+        a[href*='youtube'] {
+            &:after {
+                background-image: url(assets/images/icon-youtube.svg);
+            }
         }
 
         .name {
@@ -125,4 +214,20 @@ body.page-template-template-about {
 .careers-banner {
     text-align: center;
     background-color: $dark_grey;
+    padding: clamp(50px, 5vw, 100px) 0 clamp(80px, 5vw, 160px);
+
+    .section-content {
+        max-width: 750px;
+        font-size: clamp(1.125rem, 0.875rem + 0.6667vw, 1.5rem);
+    }
+
+    p:not(.subtitle) {
+        color: rgba($off_white, 0.6);
+        padding: 0 clamp(40px, 2vw, 80px);
+    }
+
+    .title {
+        font-size: clamp(4.75rem, 4rem + 2vw, 5.875rem);
+        line-height: 0.8;
+    }
 }

@@ -8,24 +8,117 @@
     }
 
     .section-content {
-        display: flex;
-        gap: calc($grid-gap * 4);
-        align-items: stretch;
+        gap: $grid-gap;
         padding: 0 calc($grid-gap /2);
         // max-width: unset;
 
-        > * {
-            flex: 0 1 100%;
+        @include breakpoint($mediumlarge) {
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-end;
+        }
 
+    
+        .headlines,
+        .copy {
+    
             @include breakpoint($mediumlarge) {
-                flex: 0 1 50%;
+                width: calc(100/5 * 2%);
             }
         }
+        
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $color_primary;
+        margin-bottom: 0.25rem;
+    }
+    .title {
+        line-height: 0.8;
+        text-transform: uppercase;
+        font-size: clamp(4rem, 2.75rem + 3.3333vw, 5.875rem);
+        margin-bottom: 0;
     }
 }
 
-.newsletter-subscribe {
+.newsletter {
+    
+    strong {
+        font-weight: 700;
+        color: $off_white;
+        text-transform: uppercase;
+    }
+    
+    p {
+        margin-bottom: 0.5em;
+        font-size: clamp(1.125rem, 0.875rem + 0.6667vw, 1.5rem);
+    }
+
+    .intro-copy {
+        // opacity: 0.6;
+        color: rgba($off_white, 0.6);
+    }
+
+    .forminator-custom-form {
+        display: flex;
+        position: relative;
+        // gap: $grid-gap;
+
+        button {
+            min-width: 0;
+            height: 54px;
+            cursor: pointer;
+        }
+    }
+    .forminator-field {
+    }
+    .forminator-row {
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        &.forminator-row-last {
+            display: block !important;
+        }
+    }
+    .forminator-row-last {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: unset;
+    }
+    .forminator-col {
+        padding: 0 !important;
+    }
+    .forminator-edit-module {
+        display: none;
+    }
+    .forminator-error-message {
+        display: block;
+        margin: 10px 0;
+    }
+    .forminator-response-message {
+
+    }
+
     label {
         display: none;
+    }
+
+    input[type='email'] {
+        height: 58px;
+        background: $black;
+        color: $off_white;
+        border: none;
+        padding: 10px;
+        width: 100%;
+        
+        &:focus {
+            outline: none;
+        }
     }
 }

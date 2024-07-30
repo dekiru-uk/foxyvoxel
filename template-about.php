@@ -47,7 +47,11 @@ get_header();
 						?>
 							<div class="team-member">
 								<div class="photo">
-									<img src="<?php echo $photo['sizes']['large']; ?>" alt="<?php echo $name; ?> – <?php echo $position; ?>" width="330" height="330" loading="lazy">
+									<?php if ($photo) : ?>
+										<img src="<?php echo $photo['sizes']['large']; ?>" alt="<?php echo $name; ?> – <?php echo $position; ?>" width="330" height="330" loading="lazy">
+									<?php else : ?>
+										<div class="placeholder"></div>
+									<?php endif; ?>
 
 									<?php if ($social_link) : ?>
 										<a href="<?php echo $social_link; ?>" class="social-link">Connect with <?php echo $name; ?></a>
@@ -81,7 +85,9 @@ get_header();
 						<p class="subtitle"><?php echo $subtitle; ?></p>
 						<h2 class="title"><?php echo $title; ?></h2>
 						<?php echo $copy; ?>
-						<a href="<?php echo $button_link; ?>" class="button"><?php echo $button_text; ?></a>
+						<a href="<?php echo $button_link; ?>" class="fv-button fv-button-short">
+							<?php echo $button_text; ?>
+						</a>
 					</div>
 				</section>
 			<?php endif; ?>
