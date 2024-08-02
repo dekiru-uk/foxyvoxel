@@ -11,7 +11,7 @@
 		<?php foreach( $gallery as $image ): 
 			$slide_count ++;	
 		?>
-			<div class="swiper-slide">
+			<div class="swiper-slide gallery">
 				<a href="<?php echo $image['url']; ?>" title="<?php echo $image['alt']; ?>">
 					<img src="<?php echo $image['sizes']['hd']; ?>"
 						alt="<?php echo $image['alt'];?>"

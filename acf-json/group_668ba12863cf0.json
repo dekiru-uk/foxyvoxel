@@ -658,7 +658,7 @@
             },
             "min": "",
             "max": "",
-            "button_label": "Add Row"
+            "button_label": "Add content"
         },
         {
             "key": "field_668fbc1df9906",
@@ -749,5 +749,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720709444
+    "modified": 1722570649
 }

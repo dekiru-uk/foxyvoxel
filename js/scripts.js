@@ -61,17 +61,13 @@ const gameGallerySlides = new Swiper('.game-gallery', {
   slidesPerView: 1,
   loop: false,
   speed: 500,
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: true,
-  // },
+  autoplay: {
+    delay: 7000,
+    disableOnInteraction: true,
+  },
   navigation: {
     nextEl: '.gallery-next',
     prevEl: '.gallery-prev',
-  },
-  pagination: {
-    el: '.slide-pagination',
-    clickable: 'true'
   },
   effect: 'fade',
   fadeEffect: {
