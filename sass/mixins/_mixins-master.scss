@@ -38,4 +38,20 @@
 	  -webkit-font-smoothing: subpixel-antialiased;
 	  -moz-osx-font-smoothing: auto;
 	}
-  }
+}
+
+// explode a div to full width
+@mixin explode-width($position: relative) {
+	width: 100vw;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	left: 50%;
+    right: 50%;
+	z-index: 1;
+	@if $position == relative {
+		position: relative;
+	}
+	@if $position == absolute {
+		position: absolute;
+	}
+}

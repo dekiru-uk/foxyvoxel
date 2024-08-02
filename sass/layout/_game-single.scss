@@ -1,0 +1,129 @@
+.game-single {
+    .hero-slide {
+        .slide-content {
+            height: 80%;
+        }
+
+        .background-image {
+            mask-image: none;
+        }
+    }
+}
+
+.content-background-image {
+    
+    img {
+        filter: saturate(0);
+        background-blend-mode: lighten;
+        opacity: 0.1;
+        mask-image: linear-gradient(to bottom, white, black);
+        height: unset;
+        aspect-ratio: 4/3;
+    }
+}
+
+.game-details {
+    position: relative;
+    padding: 0 clamp(20px, 5vw, 40px);
+
+    @include breakpoint($max_width_padded) {
+        padding: 0;
+    }
+
+    .divider-title {
+        text-transform: uppercase;
+    }
+}
+
+.game-intro {
+
+    .section-content {
+        max-width: $max_width;
+        margin: 0 auto 0;
+        padding: 0 calc($grid-gap / 2);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        background-color: $dark_grey;
+
+        @include breakpoint($mediumlarge) {
+            flex-direction: row;
+
+            > * {
+                width: 50%;
+            }
+        }
+    }
+
+    .intro-copy {
+        // padding: 85px 74px;
+        padding: clamp(15px, 5vw, 85px) clamp(10px, 5vw, 74px);
+
+        p {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.text-and-image {
+    display: flex;
+    margin-bottom: calc($grid-gap * 2);
+
+    @include breakpoint($large) {
+        margin-bottom: calc($grid-gap * 3);
+    }
+
+    &:nth-of-type(even) {
+        flex-direction: row-reverse;
+    }
+}
+
+.game-gallery {
+    overflow: hidden;
+    @include explode-width();
+}
+
+.slide-info {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 20px;
+    background-color: $black;
+    text-transform: uppercase;
+    color: $light_grey;
+    font-weight: 700;
+    text-align: center;
+
+    span {
+        color: $off_white;
+        display: block;
+    }
+
+    em {
+        color: $color_primary;
+        font-style: normal;
+    }
+
+    .slide-controls {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+
+        div {
+            background-color: $color_primary;
+            color: $off_white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+
+            &:hover {
+                background-color: darken($color_primary, 10%);
+            }
+        }
+    }
+}

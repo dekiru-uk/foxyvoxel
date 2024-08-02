@@ -46,136 +46,149 @@
             height: 50%;
         }
     }
+}
 
-    .actions {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-        transform: scale(0.8);
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.8);
 
-        @include breakpoint($medium) {
-            flex-direction: row;
-        }
-        @include breakpoint($large) {
-            transform: scale(1);
+    @include breakpoint($medium) {
+        flex-direction: row;
+    }
+    @include breakpoint($large) {
+        transform: scale(1);
 
-        }
-
-        .trailer,
-        .page-link {
-            height: 62px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-transform: uppercase;
-            text-decoration: none;
-            font-weight: 700;
-            color: $off_white;
-            background-color: $dark_grey;
-            padding: 0 84px 0 22px;
-            position: relative;
-            transition: all 0.15s ease-in-out;
-
-            &:visited,
-            &:active {
-                color: $off_white;
-            }
-
-            &:before,
-            &:after {
-                content: '';
-                display: block;
-                position: absolute;
-                right: 0;
-                top: 0;
-                height: 62px;
-                width: 62px;
-                transition: all 0.15s ease-in-out;
-            }
-
-            &:after {
-                opacity: 0.9;
-            }
-
-            &:before {
-                background: $color_primary;
-            }
-
-            &:hover {
-                background-color: $off_white;
-                color: $dark_grey;
-
-                &:before {
-                    background-color: $off_white;
-                }
-
-                &:after {
-                    filter: invert(52%) sepia(96%) saturate(900%) hue-rotate(339deg) brightness(103%) contrast(98%);
-                
-                }
-            }
-        }
-
-        .trailer {
-            &:after {
-                background: url(assets/images/icon-youtube.svg) no-repeat center center;
-                background-size: 32px auto;
-                filter: invert(100%);
-            }
-        }
-
-        .page-link {
-            &:after {
-                background: url(assets/images/arrow-down.svg) no-repeat center center;
-                background-size: 18px 12px;
-                transform: rotate(-90deg);
-            }
-
-        }
     }
 
-    .purchase {
+    .trailer,
+    .page-link,
+    .presspack {
+        height: 62px;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 700;
+        color: $off_white;
+        background-color: $dark_grey;
+        padding: 0 84px 0 22px;
+        position: relative;
+        transition: all 0.15s ease-in-out;
 
-        img {
-            height: 32px;
-            width: auto;
+        &:visited,
+        &:active {
+            color: $off_white;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 62px;
+            width: 62px;
+            transition: all 0.15s ease-in-out;
+        }
+
+        &:after {
             opacity: 0.9;
         }
 
-        span {
-            background-color: $dark_grey;
-            color: $off_white;
-            font-weight: 700;
-            text-transform: uppercase;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 22px;
+        &:before {
+            background: $color_primary;
         }
 
-        a {
-            background-color: $color_primary;
-            width: 62px;
-            height: 62px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.15s ease-in-out;
-            margin-right: 1px;
+        &:hover {
+            background-color: $off_white;
+            color: $dark_grey;
 
-            &:last-of-type {
-                margin-right: 0;
+            &:before {
+                background-color: $off_white;
             }
 
-            &:hover {
-                background-color: $off_white;
+            &:after {
+                filter: invert(52%) sepia(96%) saturate(900%) hue-rotate(339deg) brightness(103%) contrast(98%);
+            
+            }
+        }
+    }
 
-                img {
-                    filter: brightness(0) saturate(100%) invert(52%) sepia(96%) saturate(900%) hue-rotate(339deg) brightness(103%) contrast(98%);
-                }
+    .trailer {
+        &:after {
+            background: url(assets/images/icon-youtube.svg) no-repeat center center;
+            background-size: 32px auto;
+            filter: invert(100%);
+        }
+    }
+
+    .page-link {
+        &:after {
+            background: url(assets/images/arrow-down.svg) no-repeat center center;
+            background-size: 18px 12px;
+            transform: rotate(-90deg);
+        }
+    }
+
+    .presspack {
+        &:after {
+            background: url(assets/images/arrow-down.svg) no-repeat center center;
+            background-size: 18px 12px;
+        }
+
+        &.pp-file {
+            &:after {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+}
+
+.purchase {
+    display: flex;
+
+    img {
+        height: 32px;
+        width: auto;
+        opacity: 0.9;
+    }
+
+    span {
+        background-color: $dark_grey;
+        color: $off_white;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 22px;
+    }
+
+    a {
+        background-color: $color_primary;
+        width: 62px;
+        height: 62px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.15s ease-in-out;
+        margin-right: 1px;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+
+        &:hover {
+            background-color: $off_white;
+
+            img {
+                filter: brightness(0) saturate(100%) invert(52%) sepia(96%) saturate(900%) hue-rotate(339deg) brightness(103%) contrast(98%);
             }
         }
     }

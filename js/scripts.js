@@ -57,6 +57,28 @@ const homeNewsSlides = new Swiper('.news-scroll', {
   },
 });
 
+const gameGallerySlides = new Swiper('.game-gallery', {
+  slidesPerView: 1,
+  loop: false,
+  speed: 500,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: true,
+  // },
+  navigation: {
+    nextEl: '.gallery-next',
+    prevEl: '.gallery-prev',
+  },
+  pagination: {
+    el: '.slide-pagination',
+    clickable: 'true'
+  },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+});
+
 // rolling start!
 $(document).ready(function($){
   if ('ontouchstart' in window || 'ontouch' in window) {
