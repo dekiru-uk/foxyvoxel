@@ -5,13 +5,19 @@ jQuery.event.special.touchstart = {
   }
 };
 
-gsap.to('.fox-in-a-box img', {
-  scrollTrigger: '.intro-title', // start the animation when ".box" enters the viewport (once)
-  // x: -500
-  x: 0,
-  y: 0,
-  duration: 1
-});
+// let foxBox = document.querySelector('body.home .site-main .intro'); // check if foxBox exists
+// if (foxBox) {
+  gsap.to('.fox-in-a-box img', {
+    scrollTrigger: {
+      trigger: '.intro-title'
+    }, // start the animation when ".box" enters the viewport (once)
+
+    // x: -500
+    x: 0,
+    y: 0,
+    duration: 1
+  });
+// };
 
 const heroSlides = new Swiper('.hero-slides', {
   slidesPerView: 1,

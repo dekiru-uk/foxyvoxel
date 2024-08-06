@@ -42,7 +42,7 @@ get_header();
 
 			<div class="hero-slide">
 				<div class="background-image">
-					<img src="<?php echo $background_image['url']; ?>" alt="<?php echo $background_image['alt']; ?>">
+					<img src="<?php echo $background_image['sizes']['hd']; ?>" alt="<?php echo $background_image['alt']; ?>">
 				</div>
 
 				<div class="slide-content">

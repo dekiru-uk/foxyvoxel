@@ -19,6 +19,7 @@
         background-color: rgba($dark_grey, 0.66);
         color: $color_secondary;
         position: relative;
+        margin-right: auto;
 
         &:hover {
             color: $color_primary;

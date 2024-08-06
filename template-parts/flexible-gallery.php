@@ -12,8 +12,9 @@
 			$slide_count ++;	
 		?>
 			<div class="swiper-slide gallery">
-				<a href="<?php echo $image['url']; ?>" title="<?php echo $image['alt']; ?>">
+				<a href="<?php echo $image['sizes']['hd']; ?>" title="<?php echo $image['alt']; ?>">
 					<img src="<?php echo $image['sizes']['hd']; ?>"
+						srcset="<?php echo $image['sizes']['hd']; ?> 1x, <?php echo $image['sizes']['hd']; ?> 2x"
 						alt="<?php echo $image['alt'];?>"
 						width="<?php echo $image['sizes']['hd-width']; ?>"
 						height="<?php echo $image['sizes']['hd-height']; ?>"

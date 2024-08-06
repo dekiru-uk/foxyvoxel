@@ -23,3 +23,30 @@ h1, h2, h3, h4, h5, h6 {
 	color: $color_primary;
 	margin-bottom: 0.25rem;
 }
+
+.divider-title {
+	text-transform: uppercase;
+	margin: clamp(30px, 20vh, 60px) auto;
+	display: flex;
+	align-items: center;
+	font-size: clamp(1.125rem, 0.875rem + 0.6667vw, 1.5rem); // 18px - 24px
+	font-weight: 700;
+	line-height: 0.7;
+	max-width: $max_width;
+
+	&:before,
+	&:after {
+		content: '';
+		flex-grow: 1;
+		height: 1px;
+		background-color: rgba(white, 0.14);
+	}
+
+	&:before {
+		margin-right: $grid-gap;
+	}
+
+	&:after {
+		margin-left: $grid-gap;
+	}
+}

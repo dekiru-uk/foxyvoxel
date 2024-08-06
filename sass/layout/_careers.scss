@@ -1,0 +1,121 @@
+.careers-main {
+    .hero-slide {
+        aspect-ratio: unset;
+        padding-top: 140px;
+    }
+
+    .slide-content {
+        max-width: 640px;
+        text-align: center;
+        width: 60%;
+        font-size: clamp(1.125rem, 0.875rem + 0.6667vw, 1.5rem); // 18px - 24px
+
+        @include breakpoint($mediumlarge) {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        @include breakpoint($large) {
+            max-width: 900px;
+        }
+    }
+
+    .title {
+        font-size: clamp(4rem, 2.75rem + 3.3333vw, 5.875rem); // 44px - 64px
+    }
+
+    .background-image {
+        height: calc(100% + 180px);
+        mask-image: none;
+        overflow: hidden;
+        background-color: $black;
+        
+        img {
+            opacity: 0.75;
+            filter: blur(10px);
+            scale: 1.1;
+        }
+    }
+
+}
+
+.open-roles {
+    // background-color: $mid_grey;
+    padding: 0 0 calc($grid-gap * 6);
+    position: relative;
+
+    .section-content {
+        padding: 0 calc($grid-gap / 2);
+        // transform: translateY(-221px);
+    }
+
+    .jobs-listings {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+        align-items: center;
+        
+        @include breakpoint($medium) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: calc($grid-gap * 1.5);
+            // justify-content: center;
+            align-items: unset;
+        }
+    }
+
+    .position {
+        text-align: center;
+        padding: 40px clamp(20px, 5vw, 40px) 60px;
+        position: relative;
+        filter: drop-shadow(18px 18px 28px rgba($black, 0.36));
+        max-width: 500px;
+        
+        @include breakpoint($medium) {
+            width: calc((100% / 2) - calc($grid-gap * 1.5) + (calc($grid-gap * 1.5) / 2));
+        }
+
+        @include breakpoint($mediumlarge) {
+            padding-bottom: 40px;
+            width: calc((100% / 3) - calc($grid-gap * 1.5) + (calc($grid-gap * 1.5) / 3));
+        }
+
+        // @include breakpoint($large) {
+        //     width: calc((100% / 4) - calc($grid-gap * 1.5) + (calc($grid-gap * 1.5) / 4));
+        // }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: $black;
+            mask-image: url(assets/images/open-position-mask.svg);
+            mask-repeat: no-repeat;
+            mask-position: center top;
+            mask-size: cover;
+        }
+    }
+
+    .title {
+        font-size: clamp(1.5rem, 1.6667rem + 0.5556vw, 2rem); // 24px - 32px
+        margin-bottom: 10px;
+    }
+
+    p {
+        &:not(.subtitle) {
+            font-size: clamp(1.125rem, 0.875rem + 0.6667vw, 1.5rem); // 18px - 24px
+            color: rgba($off_white, 0.6);
+        }
+    }
+    
+    .fv-button {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+    }
+}
