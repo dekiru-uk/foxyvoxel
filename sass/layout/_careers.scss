@@ -18,6 +18,12 @@
         @include breakpoint($large) {
             max-width: 900px;
         }
+
+        p {
+            &:not(.subtitle) {
+                color: rgba($off_white, 0.79);
+            }
+        }
     }
 
     .title {
