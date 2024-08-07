@@ -133,6 +133,26 @@ function get_next_post_id( $post_id ) {
  * @return int (Maybe) modified excerpt length.
  */
 function wpdocs_custom_excerpt_length( $length ) {
-    return 20;
+    return 16;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+/**
+ * Exclude `Uncategorized` category from all terms lists.
+ *
+ * @param  array $terms Array of taxonomy terms.
+ * @return array        List of terms, less 1
+ */
+function xx_exclude_terms_uncategorized( $terms ) {
+	$exclude_terms = [ 1 ]; // Exclude `Uncategorized` category
+	if ( ! empty( $terms ) && is_array( $terms ) ) {
+		foreach ( $terms as $key => $term ) {
+			if ( in_array( $term->term_id, $exclude_terms ) ) {
+				unset( $terms[$key] );
+			}
+		}
+	}
+
+	return $terms;
+}
+add_filter( 'get_the_terms', 'xx_exclude_terms_uncategorized' );

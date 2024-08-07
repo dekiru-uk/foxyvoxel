@@ -104,6 +104,10 @@ $third_id = null;
 						
 						<div class="news-content">
 							<header class="entry-header">
+								<?php if ($post_position == 'first-post') : ?>
+									<p class="subtitle">Latest news</p>
+								<?php endif; ?>
+							
 								<h2 class="entry-title">
 									<a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a>
 								</h2>
@@ -128,12 +132,16 @@ $third_id = null;
 							</div>
 
 							<footer class="entry-footer">
-								<div class="cats">
-									Category: <?php the_category(' '); ?>
-								</div>
-								<div class="tags">
-									Tags: <?php the_tags('', ' '); ?>
-								</div>
+								<?php if (get_the_category()) : ?>
+									<div class="cats">
+										Category: <?php the_category(' '); ?>
+									</div>
+								<?php endif; ?>
+								<?php if (get_the_tags()) : ?>
+									<div class="tags">
+										Tags: <?php the_tags('', ' '); ?>
+									</div>
+								<?php endif; ?>
 
 								<?php if ($post_position == "first-post") : ?>
 
