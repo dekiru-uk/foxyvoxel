@@ -82,7 +82,7 @@ $divider_title = $header['divider_title'];
 						?>
 							<div class="position none">
 								<p class="subtitle"><?php echo $npo_subtitle; ?></p>
-								<h4><?php echo $npo_title; ?></h4>
+								<h4 class="title"><?php echo $npo_title; ?></h4>
 								<div class="overview">
 									<?php echo $npo_copy; ?>
 								</div>
