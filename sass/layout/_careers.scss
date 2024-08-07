@@ -47,11 +47,12 @@
 
 .open-roles {
     // background-color: $mid_grey;
-    padding: 0 0 calc($grid-gap * 6);
+    padding: 0 0 $grid-gap;
     position: relative;
-
+    
     .section-content {
-        padding: 0 calc($grid-gap / 2);
+        border-bottom: 1px solid rgba($off_white, 0.16);
+        padding: 0 calc($grid-gap / 2) 60px;
         // transform: translateY(-221px);
     }
 

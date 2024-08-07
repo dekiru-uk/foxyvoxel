@@ -94,7 +94,7 @@ $divider_title = $header['divider_title'];
 				</div>
 			</div>
 			
-
+			<?php get_template_part( 'template-parts/partial', 'newsletter' ); ?>
 		</main>
 	</div>
 

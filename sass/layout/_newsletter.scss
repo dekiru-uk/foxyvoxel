@@ -14,14 +14,13 @@
 
         @include breakpoint($mediumlarge) {
             display: flex;
-            align-items: stretch;
+            // align-items: stretch;
+            align-items: center;
             justify-content: flex-end;
         }
-
     
         .headlines,
         .copy {
-    
             @include breakpoint($mediumlarge) {
                 width: calc(100/5 * 2%);
             }
@@ -36,6 +35,7 @@
         color: $color_primary;
         margin-bottom: 0.25rem;
     }
+
     .title {
         line-height: 0.8;
         text-transform: uppercase;
@@ -60,65 +60,5 @@
     .intro-copy {
         // opacity: 0.6;
         color: rgba($off_white, 0.6);
-    }
-
-    .forminator-custom-form {
-        display: flex;
-        position: relative;
-        // gap: $grid-gap;
-
-        button {
-            min-width: 0;
-            height: 54px;
-            cursor: pointer;
-        }
-    }
-    .forminator-field {
-    }
-    .forminator-row {
-        margin: 0 !important;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-
-        &.forminator-row-last {
-            display: block !important;
-        }
-    }
-    .forminator-row-last {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: unset;
-    }
-    .forminator-col {
-        padding: 0 !important;
-    }
-    .forminator-edit-module {
-        display: none;
-    }
-    .forminator-error-message {
-        display: block;
-        margin: 10px 0;
-    }
-    .forminator-response-message {
-
-    }
-
-    label {
-        display: none;
-    }
-
-    input[type='email'] {
-        height: 58px;
-        background: $black;
-        color: $off_white;
-        border: none;
-        padding: 10px;
-        width: 100%;
-        
-        &:focus {
-            outline: none;
-        }
     }
 }
