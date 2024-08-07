@@ -51,9 +51,9 @@ if( function_exists('acf_add_options_page') ) {
 function add_slug_body_class( $classes ) {
 global $post;
 if ( isset( $post ) ) {
-$classes[] = $post->post_type . '-' . $post->post_name;
+	$classes[] = $post->post_type . '-' . $post->post_name;
 }
-return $classes;
+	return $classes;
 }
 add_filter( 'body_class', 'add_slug_body_class' );
 
@@ -93,3 +93,46 @@ function move_yoast_to_bottom() {
     return 'low';
 }
 add_filter( 'wpseo_metabox_prio', 'move_yoast_to_bottom');
+
+function get_previous_post_id( $post_id ) {
+    // Get a global post reference since get_adjacent_post() references it
+    global $post;
+    // Store the existing post object for later so we don't lose it
+    $oldGlobal = $post;
+    // Get the post object for the specified post and place it in the global variable
+    $post = get_post( $post_id );
+    // Get the post object for the previous post
+    $previous_post = get_previous_post();
+    // Reset our global object
+    $post = $oldGlobal;
+    if ( '' == $previous_post ) 
+        return 0;
+    return $previous_post->ID; 
+} 
+
+function get_next_post_id( $post_id ) {
+    // Get a global post reference since get_adjacent_post() references it
+    global $post;
+    // Store the existing post object for later so we don't lose it
+    $oldGlobal = $post;
+    // Get the post object for the specified post and place it in the global variable
+    $post = get_post( $post_id );
+    // Get the post object for the next post
+    $next_post = get_next_post();
+    // Reset our global object
+    $post = $oldGlobal;
+    if ( '' == $next_post ) 
+        return 0;
+    return $next_post->ID; 
+}
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
