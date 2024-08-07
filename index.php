@@ -93,7 +93,9 @@ $third_id = null;
 								} 
 								
 								if(get_the_post_thumbnail() == null) : ?>
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png" alt="">
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-md.jpg" alt="No thumbnail" 
+									width="490" height="276"
+									loading="lazy">
 								<?php endif; 
 								
 								?>
@@ -113,14 +115,16 @@ $third_id = null;
 							</header>
 
 							<div class="entry-content">
-								<?php
-								the_excerpt();
+								<a href="<?php echo the_permalink(); ?>">
+									<?php
+									the_excerpt();
 
-								wp_link_pages( array(
-									'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dekiru' ),
-									'after'  => '</div>',
-								) );
-								?>
+									wp_link_pages( array(
+										'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dekiru' ),
+										'after'  => '</div>',
+									) );
+									?>
+								</a>
 							</div>
 
 							<footer class="entry-footer">
@@ -130,6 +134,13 @@ $third_id = null;
 								<div class="tags">
 									Tags: <?php the_tags('', ' '); ?>
 								</div>
+
+								<?php if ($post_position == "first-post") : ?>
+
+									<div class="read-more">
+										<a href="<?php echo the_permalink(); ?>" class="fv-button">Read more</a>
+									</div>
+								<?php endif; ?>
 							</footer>
 						</div>
 					</article>
@@ -156,6 +167,7 @@ $third_id = null;
 		endif;
 		?>
 
+			<?php get_template_part( 'template-parts/partial', 'newsletter' ); ?>
 		</main>
 	</div>
 

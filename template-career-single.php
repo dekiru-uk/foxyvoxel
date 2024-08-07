@@ -45,6 +45,7 @@ $about_the_role = get_field('about_the_role');
 				</div>
 			</div>
 
+			<?php get_template_part( 'template-parts/partial', 'newsletter' ); ?>
 		</main>
 	</div>
 
