@@ -19,6 +19,17 @@ jQuery.event.special.touchstart = {
   });
 // };
 
+gsap.to('.newsletter-foxy', {
+  scrollTrigger: {
+    trigger: '.foxy-news'
+  }, // start the animation when ".box" enters the viewport (once)
+
+  // x: -500
+  x: 500,
+  y: 200,
+  duration: 1
+});
+
 const heroSlides = new Swiper('.hero-slides', {
   slidesPerView: 1,
   loop: false,

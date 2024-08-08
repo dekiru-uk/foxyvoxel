@@ -11,21 +11,44 @@
         gap: $grid-gap;
         padding: 0 calc($grid-gap /2);
         // max-width: unset;
+        position: relative;
+        // @include outline;
 
         @include breakpoint($mediumlarge) {
             display: flex;
+            gap: calc($grid-gap * 3);
             // align-items: stretch;
             align-items: center;
             justify-content: flex-end;
         }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-42%, -30%);
+            width: 80vw;
+            aspect-ratio: 7 / 3;
+            background-image: radial-gradient(rgba($off_white, 0.25) 0, rgba($dark_grey, 0) 70%);
+            pointer-events: none;
+        }
     
-        .headlines,
+        // .headlines,
         .copy {
             @include breakpoint($mediumlarge) {
                 width: calc(100/5 * 2%);
             }
         }
         
+    }
+
+    .newsletter-foxy {
+        transform: scaleX(-1);
+        position: relative;
+        left: -500px;
+        top: -200px;
     }
 
     .subtitle {

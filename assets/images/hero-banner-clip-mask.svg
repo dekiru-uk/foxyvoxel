@@ -1,9 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 1920 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1,0,0,1,-237.5,-40)">
-        <g transform="matrix(0.923077,0,0,1.18681,52.8846,-54.9451)">
-            <path d="M1194.5,949.556L200,949.556L200,80L2280,80L2280,949.556L1285.5,949.556L1285.5,959.667L1272.5,959.667L1272.5,969.778L1259.5,969.778L1259.5,979.889L1246.5,979.889L1246.5,990L1233.5,990L1233.5,979.889L1220.5,979.889L1220.5,969.778L1207.5,969.778L1207.5,959.667L1194.5,959.667L1194.5,949.556Z" style="fill:rgb(235,235,235);"/>
-        </g>
-    </g>
-</svg>
+<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg"><path d="m1194.5 949.556h-994.5v-869.556h2080v869.556h-994.5v10.111h-13v10.111h-13v10.111h-13v10.111h-13v-10.111h-13v-10.111h-13v-10.111h-13z" fill="#ebebeb" transform="matrix(.923077 0 0 1.18681 -184.6154 -94.9451)"/></svg>

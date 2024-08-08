@@ -1,5 +1,13 @@
 <section class="newsletter">
     <div class="section-content">
+
+        <div class="foxy-news">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/foxy-mid.png" alt="Here comes Foxy!"
+                width="301" height="360"
+                loading="lazy" class="newsletter-foxy"
+            >
+        </div>
+
         <div class="headlines">
             <p class="subtitle">Foxy Voxel</p>
             <h1 class="title">
@@ -9,6 +17,7 @@
         </div>
 
         <div class="copy">
+
             <div class="intro-copy">
                 <p>
                     Get all the latest news and updates direct to your inbox. We’ll not send you any spam, worry not!

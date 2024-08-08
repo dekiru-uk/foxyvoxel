@@ -19,6 +19,7 @@ $news_count = "0";
 $first_id = null;
 $second_id = null;
 $third_id = null;
+
 ?>
 
 	<div id="primary" class="content-area news-content">
@@ -63,12 +64,12 @@ $third_id = null;
 							// echo 'second';
 						} elseif ($next_post_id == $second_id) {
 							$third_id = $this_post;
-							$post_position = 'third-post';
+							if ($sticky == true) {
+								$post_position = 'fourth-post';
+							} else {
+								$post_position = 'third-post';
+							}
 							// echo 'third';
-						} elseif ($next_post_id == $third_id) {
-							$fourth_id = $this_post;
-							$post_position = 'fourth-post';
-							// echo 'fourth';
 						}
 
 						$classes = array(

@@ -55,3 +55,7 @@
 		position: absolute;
 	}
 }
+
+@mixin outline {
+	outline: 1px dotted #faf;
+}
