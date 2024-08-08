@@ -125,7 +125,9 @@ function dekiru_scripts() {
 	wp_deregister_script('jquery');
 	wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), null, true);
 	
-	wp_enqueue_script('gsap-script', '//cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), null, true);
+	wp_enqueue_script( 'gsap-js', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), false, true );
+    // ScrollTrigger - with gsap.js passed as a dependency
+    wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap-js'), false, true );
 
 	wp_enqueue_script('swiper-script', '//cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js', array(), null, true);
 	wp_enqueue_style( 'swiper-style', '//cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css' );

@@ -5,6 +5,7 @@ jQuery.event.special.touchstart = {
   }
 };
 
+gsap.registerPlugin(ScrollTrigger);
 // let foxBox = document.querySelector('body.home .site-main .intro'); // check if foxBox exists
 // if (foxBox) {
   gsap.to('.fox-in-a-box img', {
