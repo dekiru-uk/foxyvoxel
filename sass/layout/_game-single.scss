@@ -93,7 +93,6 @@
     margin: 0 auto calc($grid-gap * 2);
 
     @include breakpoint($mediumlarge) {
-        
         display: flex;
         align-items: center;
         max-width: $max_width;

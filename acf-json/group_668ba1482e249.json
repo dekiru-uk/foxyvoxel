@@ -3,6 +3,69 @@
     "title": "Contact",
     "fields": [
         {
+            "key": "field_66b60ea756bdc",
+            "label": "Image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_66b611383568f",
+            "label": "Connect text",
+            "name": "connect_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_66b6116064c96",
+            "label": "Social links",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "The social links are pulled in automatically from the Options section",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_669f2cb919883",
             "label": "Intro",
             "name": "intro",
@@ -69,5 +132,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1721707755
+    "modified": 1723208058
 }

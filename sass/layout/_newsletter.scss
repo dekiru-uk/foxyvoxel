@@ -84,4 +84,19 @@
         // opacity: 0.6;
         color: rgba($off_white, 0.6);
     }
+
+    label {
+        display: none;
+    }
+
+    .forminator-row-last {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: unset;
+    }
+
+    button {
+        min-width: unset;
+    }
 }
