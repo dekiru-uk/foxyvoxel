@@ -1,0 +1,143 @@
+.career-single {
+    position: relative;
+    padding: 140px $grid-gap 240px;
+
+    .background-image {
+        // filter: grayscale(100%) blur(10px);
+        filter: blur(10px);
+        mix-blend-mode: overlay;
+        // opacity: 0.25;
+        position: fixed;
+    }
+
+    .role {
+        max-width: 960px;
+        margin: 0 auto;
+        background-color: $dark-grey;
+        filter: drop-shadow(0 0 20px rgba($black, 0.5));
+    }
+
+    .role-header {
+        background-color: $black;
+        padding: 60px clamp(55px, 10vw, 110px);
+    }
+
+    .quick-details {
+        text-transform: uppercase;
+        font-size: 24px;
+        line-height: 0.8em;
+        font-weight: 700;
+
+        dl {
+            display: flex;
+            gap: $grid-gap;
+            margin: 0;
+        }
+
+        dt {
+            display: none;
+        }
+
+        dd {
+            margin: 0;
+            line-height: 0.8em;
+            position: relative;
+            padding-left: $grid-gap;
+
+            &:first-of-type {
+                padding-left: 0;
+            }
+
+            &:not(:first-of-type):after {
+                content: '';
+                display: inline-block;
+                width: 1px;
+                height: 1em;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: $light-grey;
+            }
+        }
+    }
+
+    .job-description {
+        padding: 60px clamp(55px, 10vw, 110px);
+        position: relative;
+        font-size: 20px;
+
+        p {
+            color: rgba($off_white, 0.6);
+    
+            b {
+                color: $off_white;
+                font-weight: 700;
+            }
+        }
+
+        ul, ol {
+            color: $off_white;
+            font-weight: 700;
+            padding: 0 0 0 2em;
+            margin: 0 0 2em 0;
+        }
+
+        li {
+            list-style-type: square;
+
+            &::marker {
+                color: $color_primary;
+                font-size: 140%;
+            }
+        }
+
+        a:not(.fv-button) {
+            color: $color_primary;
+            text-decoration: underline;
+            font-weight: 700;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: $off_white;
+            }
+        }
+    
+        &.form-overlay {
+            .application-form {
+                display: flex;
+            }
+        }
+    }
+
+    // .apply {
+    //     position: relative;
+    //     z-index: -1;
+    // }
+
+    .application-form {
+        display: none;
+        background-color: $dark-grey;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        padding: 60px clamp(55px, 10vw, 110px);
+        // display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        ul, ol {
+            padding: 0;
+            margin: 0;
+        }
+
+        .forminator-col {
+            width: calc(50% - calc($grid-gap * 2));
+            flex-basis: 0 !important;
+            margin-bottom: 0 !important;
+        }
+    }
+}

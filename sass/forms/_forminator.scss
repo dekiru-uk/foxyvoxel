@@ -1,8 +1,9 @@
-.forminator-custom-form {
+.forminator-ui.forminator-custom-form {
     display: flex;
     flex-direction: column;
     gap: $grid-gap;
     position: relative;
+    width: 100%;
 
     button {
         // min-width: 0;
@@ -32,66 +33,134 @@
             outline: none;
         }
     }
-}
-// .forminator-field {
-// }
-.forminator-row {
-    margin: 0 !important;
-    display: flex;
-    gap: $grid-gap;
-    align-items: flex-start;
-    // flex-direction: column;
-    width: 100%;
 
-    &.forminator-row-last {
-        display: block !important;
-    }
-
-    > * {
-        flex: 1;
-    }
-
-    textarea {
-        background-color: $black;
-        color: $off_white;
-        border: 0;
-        outline: 0;
-        border-radius: 0;
-        font-size: 20px;
-        padding: 10px;
+    .forminator-row {
+        margin: 0 !important;
+        display: flex;
+        gap: $grid-gap;
+        align-items: flex-start;
+        // flex-direction: column;
         width: 100%;
+    
+        &.no-margin {
+        }
+    
+        &.forminator-row-last {
+            display: block !important;
+        }
+    
+        > * {
+            flex: 1;
+        }
+    
+        textarea {
+            background-color: $black;
+            color: $off_white;
+            border: 0;
+            outline: 0;
+            border-radius: 0;
+            font-size: 20px;
+            padding: 10px;
+            width: 100%;
+        }
     }
-}
-.forminator-col {
-    padding: 0 !important;
-}
-.forminator-edit-module {
-    display: none;
-}
-.forminator-error-message {
-    display: block;
-    margin: 10px 0;
-}
-// .forminator-response-message {
+    .forminator-col {
+        padding: 0 !important;
+    }
+    .forminator-edit-module {
+        display: none;
+    }
+    .forminator-error-message {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .forminator-select--field {
+        background: $black;
+        color: $off_white;
+        height: 58px;
+        width: 100%;
+        outline: 0;
+        border: 0;
+        padding: 10px;
+        position: relative;
+        font-size: 20px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: $black url(assets/images/arrow-down-orange.svg) center right 10px no-repeat;
+        background-size: 24px 16px;
+    }
+    
+    .forminator-multi-upload  {
+        background-color: $black;
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .forminator-input-file {
+        color: rgba($off_white, 0.6);
+    }
 
-// }
+    .forminator-description {
+        color: rgba($off_white, 0.6);
+        margin-bottom: 10px;
+    }
 
-.forminator-select--field {
-    background: $black;
-    color: $off_white;
-    height: 58px;
-    width: 100%;
-    outline: 0;
-    border: 0;
-    padding: 10px;
-    position: relative;
-    font-size: 20px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background: $black url(assets/images/arrow-down-orange.svg) center right 10px no-repeat;
-    background-size: 24px 16px;
-}
+    .forminator-uploaded-file {
+        list-style-type: none;
+        margin-left: 0;
+    }
 
-.forminator-button {
-    @extend .fv-button;
+    .forminator-uploaded-files {
+        margin-top: 20px;
+
+        li {
+            padding: 10px 0;
+            &:not(:first-of-type) {
+                border-top: 1px solid rgba($off_white, 0.25);
+            }
+        }
+    }
+
+    .forminator-uploaded-file--content {
+        display: flex;
+        justify-content: space-between;
+        // flex-wrap: wrap;
+        gap: $grid-gap;
+    }
+
+    .forminator-uploaded-file--text {
+        p {
+            margin: 0;
+        }
+    }
+
+    .forminator-uploaded-file--title {
+        color: $off_white;
+    }
+
+    .forminator-uploaded-file--size {
+        font-weight: 400;
+
+        &::before {
+            content: '(';
+        }
+        &::after {
+            content: ')';
+        }
+    }
+    
+    .forminator-button-submit {
+        @extend .fv-button;
+    }
+
+    .forminator-button-delete {
+        background: none;
+        min-width: unset;
+        margin-left: auto;
+
+        &:hover {
+            color: $color_primary;
+        }
+    }
 }

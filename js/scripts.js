@@ -127,6 +127,10 @@ $(document).ready(function($){
     });
   };
 
+  $('#apply').on('click', function() {
+    $('.job-description').addClass('form-overlay');
+  });
+
   $('.modal-video').magnificPopup({
     type: 'iframe',
     mainClass: 'mfp-fade',
