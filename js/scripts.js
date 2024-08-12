@@ -130,6 +130,9 @@ $(document).ready(function($){
   $('#apply').on('click', function() {
     $('.job-description').addClass('form-overlay');
   });
+  $('#close-form').on('click', function() {
+    $('.job-description').toggleClass('form-overlay');
+  });
 
   $('.modal-video').magnificPopup({
     type: 'iframe',

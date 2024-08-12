@@ -12,7 +12,7 @@ input[type="submit"] {
 	line-height: 0.9;
 	min-height: 54px;
 	min-width: 224px;
-	padding: 20px;
+	padding: 20px 30px 20px 20px;
 	border: 0;
 
 	display: inline-flex;
@@ -137,4 +137,20 @@ input[type="submit"] {
 
 .fv-button-short {
 	min-width: unset;
+}
+
+.fv-close-button {
+	min-width: unset;
+	position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+
+	span {
+		display: none;
+	}
+
+	&:before {
+		content: '✕';
+	}
 }
