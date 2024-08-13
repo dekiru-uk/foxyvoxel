@@ -153,5 +153,14 @@
             }
             
         }
+
+        .forminator-no-margin {
+            gap: $grid-gap;
+        }
+
+        .forminator-col-md-6{
+            flex-basis: 0 !important;
+            margin-bottom: 0 !important;
+        }
     }
 }
