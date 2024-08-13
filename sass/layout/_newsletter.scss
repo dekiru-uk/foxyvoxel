@@ -10,29 +10,21 @@
     .section-content {
         gap: $grid-gap;
         padding: 0 calc($grid-gap /2);
-        // max-width: unset;
+        max-width: 660px;
         position: relative;
         // @include outline;
 
         @include breakpoint($mediumlarge) {
+            max-width: $max-width;
             display: flex;
-            gap: calc($grid-gap * 3);
+            gap: calc($grid-gap * 2);
             // align-items: stretch;
             align-items: center;
             justify-content: flex-end;
         }
 
-        &:before {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translate(-42%, -30%);
-            width: 80vw;
-            aspect-ratio: 7 / 3;
-            background-image: radial-gradient(rgba($off_white, 0.25) 0, rgba($dark_grey, 0) 70%);
-            pointer-events: none;
+        @include breakpoint($large) {
+            gap: calc($grid-gap * 3);
         }
     
         // .headlines,
@@ -42,6 +34,29 @@
             }
         }
         
+    }
+
+    .foxy-news {
+        position: relative;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            // transform: translate(-42%, -30%);
+            transform: translate(-26%, -10%);
+            width: 80vw;
+            aspect-ratio: 7 / 3;
+            background-image: radial-gradient(rgba($off_white, 0.25) 0, rgba($dark_grey, 0) 70%);
+            pointer-events: none;
+
+            @include breakpoint($mediumlarge) {
+                transform: translate(-42%, -30%);
+            }
+            
+        }
     }
 
     .newsletter-foxy {
@@ -62,7 +77,8 @@
     .title {
         line-height: 0.8;
         text-transform: uppercase;
-        font-size: clamp(4rem, 2.75rem + 3.3333vw, 5.875rem);
+        // font-size: clamp(4rem, 2.75rem + 3.3333vw, 5.875rem); // 44px - 94px
+        font-size: clamp(2rem, -0.5833rem + 8.6111vw, 5.875rem);
         margin-bottom: 0;
     }
 }
@@ -85,18 +101,28 @@
         color: rgba($off_white, 0.6);
     }
 
-    label {
-        display: none;
+    .forminator-ui.forminator-custom-form {
+        gap: 0;
+    }
+
+    .forminator-label {
+        display: none !important;
     }
 
     .forminator-row-last {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: unset;
+        width: unset !important;
+        padding-top: 20px;
+        text-align: right;
+
+        @include breakpoint($large) {
+            padding-top: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
     }
 
-    button {
-        min-width: unset;
+    .forminator-button {
+        min-width: unset !important;
     }
 }
