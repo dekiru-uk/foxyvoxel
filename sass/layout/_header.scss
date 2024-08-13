@@ -13,13 +13,19 @@
     font-weight: 700;
 
     .logo {
-        height: 113px;
+        // height: 85px;
+        // width: auto;
+        // transition: all 0.25s ease-in-out;
         display: flex;
-        transition: all 0.25s ease-in-out;
         background-color: rgba($dark_grey, 0.66);
         color: $color_secondary;
         position: relative;
+        z-index: 1001;
         margin-right: auto;
+
+        @include breakpoint($mediumlarge) {
+            // height: 113px;
+        }
 
         &:hover {
             color: $color_primary;
@@ -36,6 +42,13 @@
         .logo-image {
             background-color: $dark_grey;
             // border-bottom: 4px solid $color_primary;
+            height: 86px;
+            width: 86px;
+
+            @include breakpoint($mediumlarge) {
+                width: 113px;
+                height: 113px;
+            }
         }
 
         &:after {
@@ -45,16 +58,20 @@
             left: 0;
             bottom: 0;
             height: 4px;
-            width: 113px;
+            width: 86px;
             background-color: $color_primary;
             transition: all 0.25s ease-in-out;
+
+            @include breakpoint($mediumlarge) {
+                width: 113px;
+            }
         }
     }
 
     .logo-word-marquee {
         font-family: 'RetroGaming';
         text-transform: uppercase;
-        font-size: 32px;
+        font-size: 28px;
         line-height: 0.9;
         font-weight: 400;
         letter-spacing: -0.05em;
@@ -62,7 +79,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 20px 28px;
+        padding: 16px 20px;
+
+        @include breakpoint($mediumlarge) {
+            font-size: 32px;
+            padding: 20px 28px;
+        }
     }
 
     .menu {

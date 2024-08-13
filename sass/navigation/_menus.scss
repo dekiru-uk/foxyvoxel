@@ -68,7 +68,52 @@
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-	display: block;
+	display: flex;
+}
+
+.menu-active {
+	.site-header {
+		height: 100vh;
+	}
+}
+
+.main-navigation {
+	&.toggled {
+		// display: flex;
+		// flex-direction: column;
+
+		.menu {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: $grid-gap;
+			background-color: rgba(0, 0, 0, 0.95);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			font-size: 32px;
+
+			a {
+				color: $off_white;
+				padding: 20px;
+			}
+		}
+
+		.social-links {
+			position: absolute;
+			bottom: 5vh;
+			left: 0;
+			width: 100%;
+			gap: calc($grid-gap * 2);
+			justify-content: center;
+
+			img {
+				height: 32px;
+			}
+		}
+	}
 }
 
 @include breakpoint($mediumlarge) {
