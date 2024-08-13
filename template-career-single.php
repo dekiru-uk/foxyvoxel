@@ -43,7 +43,9 @@ $about_the_role = get_field('about_the_role');
 				</div>
 
 				<div class="job-description">
-					<?php echo $about_the_role; ?>
+					<div class="job-contents">
+						<?php echo $about_the_role; ?>
+					</div>
 
 					<div class="application-form">
 						<button id="close-form" class="fv-button fv-close-button"><span>Close</span></button>

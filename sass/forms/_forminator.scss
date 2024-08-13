@@ -36,22 +36,25 @@
 
     .forminator-row {
         margin: 0 !important;
-        display: flex;
-        gap: $grid-gap;
-        align-items: flex-start;
-        // flex-direction: column;
         width: 100%;
-    
-        &.no-margin {
+
+        @include breakpoint($mediumlarge) {
+            display: flex;
+            gap: $grid-gap;
+            align-items: flex-start;
+            // flex-direction: column;
         }
-    
+
         &.forminator-row-last {
             display: block !important;
         }
     
-        > * {
-            flex: 1;
+        @include breakpoint($mediumlarge) {
+            > * {
+                flex: 1;
+            }
         }
+        
     
         textarea {
             background-color: $black;
