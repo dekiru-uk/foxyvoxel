@@ -6,9 +6,11 @@
         flex-direction: column;
         gap: $grid-gap;
         padding: 0 calc($grid-gap / 2);
+        max-width: 720px;
 
-        @include breakpoint($mediumlarge) {
+        @include breakpoint($large) {
             flex-direction: row;
+            max-width: $max-width;
 
             > * {
                 flex: 0 1 50%;
@@ -16,21 +18,25 @@
         }
     }
 
-    .section-content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, auto);
-        grid-column-gap: calc($grid-gap * 3);
-        grid-row-gap: $grid-gap;
-        align-items: end;
+    @include breakpoint($large) {
+        .section-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, auto);
+            grid-column-gap: calc($grid-gap * 3);
+            grid-row-gap: $grid-gap;
+            align-items: end;
+        }
+            
+        .image-block { grid-area: 1 / 1 / 2 / 2; }
+        .connect { grid-area: 2 / 1 / 3 / 2; }
+        .form-block { grid-area: 1 / 2 / 3 / 3; }
+
     }
-        
-    .image-block { grid-area: 1 / 1 / 2 / 2; }
-    .connect { grid-area: 2 / 1 / 3 / 2; }
-    .form-block { grid-area: 1 / 2 / 3 / 3; }
 
     .image-block {
         position: relative;
+        order: 1;
 
         &:before {
             content: '';
@@ -47,14 +53,22 @@
         }
 
         img {
-            max-width: 520px;
+            max-width: 250px;
             margin: 0 auto;
+
+            @include breakpoint($large) {
+                max-width: 520px;
+            }
         }
     }
 
     .section-title {
         text-transform: uppercase;
         line-height: 0.8;
+    }
+
+    .connect {
+        order: 3;
     }
 
     .connect-title {
@@ -97,5 +111,18 @@
     .intro-copy {
         font-size: 22px;
         color: rgba($off_white, 0.6);
+    }
+
+    .form-block {
+        order: 2;
+        text-align: center;
+
+        @include breakpoint($large) {
+            text-align: left;
+        }
+    }
+
+    .forminator-custom-form {
+        text-align: left;
     }
 }
