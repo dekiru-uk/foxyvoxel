@@ -24,7 +24,7 @@ $background_image = get_field('default_page_background_image','option');
 		
 		<main id="main" class="site-main page">
 
-			<h1 class="section-title"><?php the_title(); ?></h1>
+			<h1 class="page-title"><?php the_title(); ?></h1>
 			<?php echo the_content(); ?>
 
 		</main>
