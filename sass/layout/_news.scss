@@ -132,7 +132,7 @@
     }
 
     .entry-footer {
-        line-height: 1;
+        line-height: 1.2;
         position: relative;
         text-transform: uppercase;
         font-weight: 700;
@@ -140,6 +140,16 @@
 
         .cats {
             padding-top: 10px;
+        }
+
+        a:not(.fv-button) {
+            &:visited {
+                color: $color-primary;
+            }
+            
+            &:hover {
+                color: white;
+            }
         }
     }
 }

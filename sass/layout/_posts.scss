@@ -1,0 +1,105 @@
+.post-template-default {
+    background-color: $near_black;
+
+    .background-image {
+        img {
+            aspect-ratio: 16/9;
+            height: auto;
+        }
+    }
+}
+
+.site-main.single {
+    max-width: 1136px;
+    margin: clamp(200px, 50vh, 580px) auto 0;
+    font-size: clamp(1rem, 0.8333rem + 0.5556vw, 1.25rem);
+    
+    .entry-header {
+        background-color: $near_black;
+        mask-image: url(assets/images/post-header-mask.svg);
+        mask-repeat: no-repeat;
+        mask-position: center top;
+        mask-size: cover;
+        padding: clamp(40px, 5vw, 80px) clamp(20px, 10vw, 80px) 0;
+    }
+    
+    .entry-title {
+        margin: 10px 0 5px;
+        line-height: 1;
+    }
+    
+    .entry-content {
+        background-color: $near_black;
+        padding: clamp(1rem, 5vw, 2rem) clamp(20px, 10vw, 80px);
+    }
+
+    .entry-meta {
+        text-transform: uppercase;
+        font-weight: 700;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba($off_white, 0.23);
+
+        .cats {
+            border-top: 1px solid rgba($off_white, 0.23);
+            padding-top: 1rem;
+
+            + .tags {
+                border: 0;
+                padding-top: 0;
+            }
+        }
+        .tags {
+            border-top: 1px solid rgba($off_white, 0.23);
+            padding-top: 1rem;
+        }
+    }
+
+    .post-navigation {
+        border-top: 1px solid rgba($off_white, 0.23);
+        margin: 0 clamp(20px, 10vw, 80px);
+        padding: 2rem 0;
+        margin-bottom: 80px;
+
+        a {
+            @extend .fv-button;
+        }
+    }
+
+    .post {
+        a {
+            color: $color-primary;
+            transition: all 0.3s ease-in-out;
+    
+            &:visited {
+                color: $color-primary;
+            }
+            
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+
+    p {
+        &:not(.subtitle, .posted-on) {
+            color: rgba($off_white, 0.6);
+        }
+    }
+
+    ul, ol {
+        color: $off_white;
+        font-weight: 700;
+        padding: 0 0 0 2em;
+        margin: 0 0 2em 0;
+    }
+
+    li {
+        list-style-type: square;
+
+        &::marker {
+            color: $color_primary;
+            font-size: 140%;
+        }
+    }
+}

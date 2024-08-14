@@ -8,10 +8,18 @@
  */
 
 get_header();
+
+$id = get_the_ID();
+
+
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<div class="background-image">
+			<?php the_post_thumbnail('hd'); ?>
+		</div>
+
+		<main id="main" class="site-main single">
 
 		<?php
 		while ( have_posts() ) :

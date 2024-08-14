@@ -7,10 +7,14 @@
  * @package dekiru
  */
 
+
+$posts_page = get_option( 'page_for_posts' );
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<p class="subtitle">Latest news</p>
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
@@ -21,15 +25,24 @@
 		if ( 'post' === get_post_type() ) :
 			?>
 			<div class="entry-meta">
-				<?php
-				dekiru_posted_on();
-				dekiru_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+				<p class="posted-on"><?php the_time('d/m/Y'); ?></p>
 
-	<?php dekiru_post_thumbnail(); ?>
+				<?php if (get_the_category()) : ?>
+					<div class="cats">
+						Category: <?php the_category(' '); ?>
+					</div>
+				<?php endif; ?>
+				<?php if (get_the_tags()) : ?>
+					<div class="tags">
+						Tags: <?php the_tags('', ' '); ?>
+					</div>
+				<?php endif; ?>
+				
+			</div>
+		<?php endif; ?>
+	</header>
+
+	<?php // dekiru_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -51,9 +64,5 @@
 			'after'  => '</div>',
 		) );
 		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php dekiru_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+	</div>
+</article>
