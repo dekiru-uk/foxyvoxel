@@ -28,7 +28,9 @@ $form_id = $form->ID;
 				</div>
 
 				<div class="connect">
-					<p class="connect-title"><?php echo $connect_text; ?></p>
+					<div class="connect-title-box">
+						<p class="connect-title"><?php echo $connect_text; ?></p>
+					</div>
 					<?php get_template_part( 'template-parts/partial', 'social' ); ?>
 				</div>
 
