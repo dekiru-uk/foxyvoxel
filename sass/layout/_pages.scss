@@ -1,0 +1,56 @@
+.page-template-default.page {
+    background-color: $dark-grey;
+
+    .background-image {
+        filter: blur(5px) grayscale(20%);
+        mix-blend-mode: overlay;
+        position: fixed;
+    }
+
+    .site-content {
+        padding: 0 calc($grid-gap / 2);
+    }
+}
+
+.site-main.page {
+	background-color: $dark-grey;
+	max-width: 960px;
+	margin: 100px auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
+
+    @include breakpoint($mediumlarge) {
+        margin: 140px auto;
+    }
+
+    .section-title {
+        background-color: $black;
+        margin: 0 calc(clamp(20px, 5vw, 40px) * -1) 2rem;
+        padding: clamp(20px, 5vh, 60px) clamp(20px, 5vw, 40px);
+        line-height: 1;
+    }
+
+    h1:not(.section-title) {
+        font-size: clamp(2.25rem, 1.75rem + 1.6667vw, 3rem);
+        margin: 0.5em 0;
+        line-height: 1.2;
+    }
+
+    h2, h3, h4 {
+        font-size: clamp(1.5rem, 1.1667rem + 1.1111vw, 2rem);
+        margin: 0.5em 0;
+        line-height: 1.2;
+    }
+
+    a {
+        font-weight: 700;
+        color: $color-primary;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            text-decoration: underline;
+            color: white;
+        }
+    }
+}

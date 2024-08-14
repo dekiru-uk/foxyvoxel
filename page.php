@@ -13,12 +13,18 @@
  */
 
 get_header();
+
+$background_image = get_field('default_page_background_image','option');
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<div class="background-image">
+			<img src="<?php echo $background_image['sizes']['hd']; ?>" alt="<?php echo $background_image['alt']; ?>">
+		</div>
+		
+		<main id="main" class="site-main page">
 
-			<h1><?php the_title(); ?></h1>
+			<h1 class="section-title"><?php the_title(); ?></h1>
 			<?php echo the_content(); ?>
 
 		</main>
