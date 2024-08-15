@@ -18,9 +18,11 @@ $background_image = get_field('default_page_background_image','option');
 ?>
 
 	<div id="primary" class="content-area">
-		<div class="background-image">
-			<img src="<?php echo $background_image['sizes']['hd']; ?>" alt="<?php echo $background_image['alt']; ?>">
-		</div>
+		<?php if ($background_image) : ?>
+			<div class="background-image">
+				<img src="<?php echo $background_image['sizes']['hd']; ?>" alt="<?php echo $background_image['alt']; ?>">
+			</div>
+		<?php endif; ?>
 		
 		<main id="main" class="site-main page">
 

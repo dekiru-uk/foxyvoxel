@@ -62,7 +62,7 @@ input[type="submit"] {
 
 
 	&:hover {
-		filter: drop-shadow(0 0 5px rgba($color_primary, 0.5));
+		filter: drop-shadow(0 0 5px lighten($color_primary, 0.5));
 		border-image-width: 8px 8px 7px 14px;
 
 		&:after {
