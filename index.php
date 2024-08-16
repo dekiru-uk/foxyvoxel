@@ -167,7 +167,7 @@ $third_id = null;
 				<?php endwhile; ?>
 			</div>
 
-			<?php the_posts_navigation();
+			<?php // the_posts_navigation();
 
 		else :
 

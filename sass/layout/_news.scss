@@ -1,5 +1,4 @@
 .news-blocks {
-    background-color: $near_black;
     display: flex;
     flex-direction: column;
     gap: calc($grid-gap * 1.5);
@@ -145,7 +144,7 @@
 
         a:not(.fv-button) {
             &:visited {
-                color: $color-primary;
+                color: $color_primary;
             }
             
             &:hover {
@@ -312,7 +311,8 @@
 }
 
 .site-main.news {
-    padding: 0 calc($grid-gap / 2) 80px;
+    background-color: $near_black;
+    // padding: 0 calc($grid-gap / 2) 80px;
 
     .news-blocks {
         max-width: $max_width;
@@ -350,5 +350,167 @@
 
     label {
         display: none;
+    }
+}
+
+body[class*='paged-'] {
+    .site-main.news {
+        padding-top: 120px;
+    }
+}
+
+.navigation {
+    width: 100%;
+    padding: 40px 0;
+}
+
+.site-main.news .wp-paginate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+
+    a:not(.prev,.next) {
+        background-color: rgba($color_primary, 0.5);
+        border: none;
+        border-radius: none;
+        color: $off_white;
+        height: 32px;
+        width: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            filter: drop-shadow(0 0 10px rgba($color_primary, 0.75));
+        }
+    }
+
+    .current {
+        background: $color_primary;
+        border: none;
+        border-radius: none;
+        color: $off_white;
+        height: 32px;
+        width: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .next,
+    .prev {
+        display: block;
+        background-color: $mid_grey;
+        position: relative;
+        width: 56px;
+        height: 56px;
+        text-indent: -9999px;
+        font-size: 1px;
+        color: $dark_grey;
+        border: 0;
+        
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url(assets/images/arrow-down.svg) center center no-repeat;
+            background-size: 18px 12px;
+            transform: rotate(90deg);
+            filter: brightness(0.5);
+        }
+
+        &:hover {
+            &:after {
+                filter: brightness(1) saturate(100%) invert(52%) sepia(96%) saturate(900%) hue-rotate(339deg) brightness(103%) contrast(98%);
+            }
+        }
+
+        span {
+            display: block;
+            // outline: 1px solid yellow;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all .15s ease-in-out;
+            margin: 0 10px 10px 0;
+
+            &:before,
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                background-color: darken($mid_grey, 5%);
+                transition: all .15s ease-in-out;
+            }
+
+            &:before {
+                top: 4px;
+                right: -10px;
+                height: 100%;
+                width: 10px;
+                transform: skewY(45deg);
+            }
+
+            &:after {
+                bottom: -10px;
+                left: 4px;
+                width: 100%;
+                height: 10px;
+                transform: skewX(45deg);
+            }
+
+            &:hover {
+                margin-top: 4px;
+                margin-left: 4px;
+                margin-right: 6px;
+                margin-bottom: 6px;
+                filter: drop-shadow(0 0 5px rgba($mid_grey, 0.5));
+
+                &:before {
+                    top: 3px;
+                    right: -6px;
+                    width: 6px;
+                }
+
+                &:after {
+                    bottom: -6px;
+                    left: 3px;
+                    height: 6px;
+                }
+            }
+
+            &:active {
+                margin-top: 8px;
+                margin-left: 8px;
+                margin-right: 2px;
+                margin-bottom: 2px;
+                filter: drop-shadow(0 0 10px rgba($mid_grey, 1));
+
+                &:before {
+                    top: 1px;
+                    right: -2px;
+                    width: 2px;
+                }
+
+                &:after {
+                    bottom: -2px;
+                    left: 1px;
+                    height: 2px;
+                }
+            }
+        }
+    }
+
+    .next {
+        &:after {
+            transform: rotate(-90deg);
+        }
     }
 }

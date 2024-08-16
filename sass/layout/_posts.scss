@@ -67,11 +67,11 @@
 
     .post {
         a {
-            color: $color-primary;
+            color: $color_primary;
             transition: all 0.3s ease-in-out;
     
             &:visited {
-                color: $color-primary;
+                color: $color_primary;
             }
             
             &:hover {
