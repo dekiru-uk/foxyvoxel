@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: calc($grid-gap * 1.5);
+    padding: 0 calc($grid-gap / 2);
 
     @include breakpoint($medium) {
         flex-direction: row;
@@ -11,7 +12,7 @@
     .news-item {
         background-color: $black;
         position: relative;
-        filter: drop-shadow(0 0 20px rgba($black, 0.37));
+        filter: drop-shadow(0 10px 10px rgba($black, 0.37));
         overflow: hidden;
 
         @include breakpoint($medium) {
@@ -192,8 +193,11 @@
             padding: clamp(20px, 5vw, 80px);
             font-size: 20px;
             line-height: 1.5;
+            transform: scale(0.8);
+            transform-origin: right center;
 
             @include breakpoint($medium) {
+                transform: scale(1);
                 max-width: 30%;
             }
         }
@@ -323,6 +327,7 @@
 .title-and-search {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
