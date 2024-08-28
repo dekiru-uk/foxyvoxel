@@ -220,6 +220,7 @@ body.page-template-template-about {
     .section-content {
         max-width: 750px;
         font-size: clamp(1.125rem, 0.875rem + 0.6667vw, 1.5rem);
+        padding: 0 $grid-gap;
     }
 
     p:not(.subtitle) {
@@ -228,7 +229,12 @@ body.page-template-template-about {
     }
 
     .title {
-        font-size: clamp(4.75rem, 4rem + 2vw, 5.875rem);
+        // font-size: clamp(4.75rem, 4rem + 2vw, 5.875rem);
+        font-size: clamp(2.625rem, 1.7083rem + 3.0556vw, 4rem); // 42px - 64px
         line-height: 0.8;
+
+        @include breakpoint($medium) {
+            font-size: clamp(4.75rem, 4rem + 2vw, 5.875rem); // 76px - 94px
+        }
     }
 }
