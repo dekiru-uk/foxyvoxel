@@ -45,10 +45,14 @@ body.page-template-template-about {
     }
 
     .copy {
-        max-width: 720px;
+        max-width: 540px;
         margin: 0 auto;
         // opacity: 0.6;
         color: rgba($off_white, 0.6);
+
+        @include breakpoint($mediumlarge) {
+            max-width: 720px;
+        }
     }
 
     &:before {
@@ -66,7 +70,7 @@ body.page-template-template-about {
         transform: rotate(30deg) translateX(-27%);
 
         @include breakpoint($mediumlarge) {
-            top: 50%;
+            // top: 50%;
             min-width: 300px;
         }
 
@@ -74,7 +78,7 @@ body.page-template-template-about {
             min-width: 500px;
             max-width: 660px;
             top: unset;
-            bottom: -50px;
+            // bottom: -50px;
             // transform: rotate(30deg) translate(-27%, -50%);
         }
     }
