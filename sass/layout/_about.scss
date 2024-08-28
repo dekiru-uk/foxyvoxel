@@ -101,6 +101,7 @@ body.page-template-template-about {
         font-size: clamp(1rem, 0.8333rem + 0.4444vw, 1.25rem); // 16px - 20px
         position: relative;
         z-index: +1;
+        width: 100%;
 
         @include breakpoint($medium) {
             width: calc((100% / 2) - $grid-gap + ($grid-gap / 2));
