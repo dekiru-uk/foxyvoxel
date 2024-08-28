@@ -18,7 +18,7 @@
 	background-color: $dark-grey;
 	max-width: 960px;
 	margin: 100px auto;
-    padding: 0 clamp(20px, 5vw, 40px) 60px;
+    padding: 0 clamp(55px, 10vw, 110px) 60px;
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
 
     @include breakpoint($mediumlarge) {
@@ -27,8 +27,8 @@
 
     .page-title {
         background-color: $black;
-        margin: 0 calc(clamp(20px, 5vw, 40px) * -1) 2rem;
-        padding: clamp(20px, 5vh, 60px) clamp(20px, 5vw, 40px);
+        margin: 0 calc(clamp(55px, 10vw, 110px) * -1) 2rem;
+        padding: clamp(20px, 5vh, 60px) clamp(55px, 10vw, 110px);
         line-height: 1;
     }
 
