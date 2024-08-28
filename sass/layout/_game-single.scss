@@ -86,6 +86,44 @@
             height: 100%;
             object-fit: cover;
         }
+
+        .modal-video {
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 64px;
+                height: 64px;
+                transform: translate(-50%, -50%);
+                transition: all 0.3s ease-in-out;
+            }
+    
+            &:before {
+                background: url(assets/images/icon-youtube.svg) no-repeat center center;
+                background-size: 36px auto;
+                z-index: 2;
+                filter: invert(98%) sepia(94%) saturate(467%) hue-rotate(297deg) brightness(104%) contrast(108%);
+            }
+    
+            &:after {
+                background-color: $color_primary;
+                filter: drop-shadow(0 0 0 $color_primary);
+                z-index: 1;
+            }
+
+            &:hover {
+                &:before,
+                &:after {
+                    transform: translate(-50%, -50%) scale(1.2);
+                }
+                &:after {
+                    filter: drop-shadow(0 0 10px $color_primary);
+                }
+            }
+        }
     }
 }
 
@@ -116,7 +154,7 @@
 
     &:nth-of-type(odd) {
         
-        @include breakpoint($large) {
+        @include breakpoint($mediumlarge) {
             flex-direction: row-reverse;
 
             .text {
