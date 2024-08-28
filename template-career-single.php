@@ -48,7 +48,9 @@ $about_the_role = get_field('about_the_role');
 					</div>
 
 					<div class="application-form">
-						<button id="close-form" class="fv-button fv-close-button"><span>Close</span></button>
+						<button id="close-form" class="fv-button fv-close-button">
+							<div></div><span>Close</span>
+						</button>
 						<?php echo do_shortcode( '[forminator_form id="230"]' ); ?>
 					</div>
 

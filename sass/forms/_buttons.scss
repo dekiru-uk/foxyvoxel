@@ -101,11 +101,21 @@ input[type="submit"] {
     right: 0;
     transform: translate(50%, -50%);
 
-	span {
-		display: none;
+	div {
+		&:before {
+			content: '✕';
+			color: $off_white;
+			z-index: +1;
+			line-height: 0.8;
+		}
 	}
 
-	&:before {
-		content: '✕';
-	}
+	span {
+		position: relative;
+		display: block;
+		// display: none;
+		height: 0;
+		width: 0;
+		overflow: hidden;	
+	}	
 }
