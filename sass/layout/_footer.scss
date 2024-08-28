@@ -65,10 +65,12 @@
             flex-wrap: wrap;
             justify-content: center;
             flex-direction: row;
-            gap: 20px;
+            column-gap: 20px;
+            row-gap: 10px;
             list-style-type: none;
             padding: 0;
             margin: 0;
+            padding: 0 $grid-gap;
         }
 
         .menu-item {
@@ -86,34 +88,40 @@
     .information {
         width: 100%;
         background-color: #EEE4D7;
-        display: flex;
-        gap: 20px;
         padding: 40px;
         justify-content: center;
         position: relative;
 
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 0;
-            left: calc(50vw + calc($max_width / 3));
-            width: 100px;
-            height: 65px;
-            transform: translateY(-100%);
-            background: url(assets/images/pixel-foxy.svg) center top no-repeat;
-            background-size: cover;
+        @include breakpoint($medium) {
+            display: flex;
+            gap: 20px;
+
+            &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: calc(50vw + calc($max_width / 3));
+                width: 100px;
+                height: 65px;
+                transform: translateY(-100%);
+                background: url(assets/images/pixel-foxy.svg) center top no-repeat;
+                background-size: cover;
+            }
         }
 
         p {
             margin-bottom: 0;
 
-            &:not(:first-of-type) {
-                
-                &:before {
-                    content: '|';
-                    color: #9D968C;
-                    margin-right: 20px;
+            @include breakpoint($medium) {
+
+                &:not(:first-of-type) {
+                    
+                    &:before {
+                        content: '|';
+                        color: #9D968C;
+                        margin-right: 20px;
+                    }
                 }
             }
         }
