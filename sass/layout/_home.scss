@@ -3,14 +3,18 @@
     
     .section-content {
         display: flex;
+        flex-direction: column;
         align-items: stretch;
         // padding: 190px 0 200px;
         padding: clamp(50px, 10vw, 190px) 0;
         max-width: unset;
+
+        @include breakpoint($mediumlarge) {
+            flex-direction: row;
+        }
     }
 
     .intro-content {
-        width: 50vw;
         padding: 0 56px;
         // font-size: 22px;
         font-size: clamp(1.125rem, 0.9583rem + 0.4444vw, 1.375rem);
@@ -18,14 +22,24 @@
         height: 100%;
         // outline: 1px dotted green;
         // background-color: rgba(green, 0.2);
-        display: flex;
-        justify-content: flex-end;
+        order: 2;
+
+        @include breakpoint($mediumlarge) {
+            order: 1;
+            display: flex;
+            justify-content: flex-end;
+            width: 50vw;
+        }
     }
 
     .intro-text {
-        max-width: calc($max_width / 2);
-        width: 100%;
         // outline: 1px dotted red;
+        width: 100%;
+
+        @include breakpoint($mediumlarge) {
+            max-width: calc($max_width / 2);
+            // width: 100%;
+        }
     }
 
     .intro-subtitle,
@@ -44,38 +58,54 @@
 
     .intro-title {
         // font-size: 176px;
-        font-size: clamp(6.25rem, 3.0833rem + 8.4444vw, 11rem); // 100px - 176px
+        font-size: 80px;
         font-weight: 400;
         letter-spacing: -0.05em;
+
+        @include breakpoint($mediumlarge) {
+            font-size: clamp(6.25rem, 3.0833rem + 8.4444vw, 11rem); // 100px - 176px
+        }
     }
 
     .copy {
         opacity: 0.6;
     }
 
+    .fv-button {
+        margin: 0 auto;
+    }
+
     .intro-image {
-        width: 50vw;
         padding: 0 56px;
         display: block;
         position: relative;
+        order: 1;
+        height: calc(100vw / 3 * 2);
         // outline: 1px dotted #faf;
+        
+        @include breakpoint($mediumlarge) {
+            order: 2;
+            width: 50vw;
+        }
     }
 
     .fox-in-a-box {
         position: absolute;
-        // top: -502px;
-        // top: clamp(-100px, -50vw, -502px);
-        // height: calc(100% + 600px);
         top: -27vw;
         left: 0;
         right: 0;
+        height: 140%;
         z-index: 10;
         display: flex;
         align-items: flex-start;
-        padding-left: 20px;
-        aspect-ratio: 884 / 1228;
         pointer-events: none;
         // outline: 1px dotted yellow;
+        
+        @include breakpoint($mediumlarge) {
+            height: unset;
+            aspect-ratio: 884 / 1228;
+            padding-left: 20px;
+        }
 
         // white spotlight
         &:after {
@@ -83,14 +113,19 @@
             display: block;
             position: absolute;
             bottom: 0;
-            left: -10vw;
             // height: 50%;
             // width: 180%;
+            right: -5vw;
             width: 80vw;
             aspect-ratio: 7 / 3;
             z-index: -1;
             background-image: radial-gradient(rgba($off_white, 0.25) 0, rgba($dark_grey, 0) 70%);
             pointer-events: none;
+
+            @include breakpoint($mediumlarge) {
+
+                left: -10vw;
+            }
         }
 
         img {
@@ -98,7 +133,7 @@
             top: 0;
             right: 0;
             width: 100%;
-            max-width: 884px;
+            max-width: calc(100vw / 3 * 2);
             // height: 100%;
             height: auto;
             aspect-ratio: 884 / 1228;
@@ -106,9 +141,9 @@
             object-position: right center;
             transform: translate(1000px,-200px);
             
-            // max-width: 978px;
-            // width: calc(100vw / 3 * 2);
-            // background-color: rgba(#faf, 0.2);
+            @include breakpoint($mediumlarge) {
+                max-width: 884px;
+            }
         }
     }
 }
@@ -116,6 +151,7 @@
 .news-scroll {
     background-color: $black;
     position: relative;
+    z-index:+100;
 
     .news-block {
         @include breakpoint($mediumlarge) {

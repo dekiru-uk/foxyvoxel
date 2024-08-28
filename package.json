@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/dekiru-uk/foxyvoxel.git"
   },
-  "author": "",
+  "author": "Jake Smith",
   "license": "ISC",
   "devDependencies": {
     "@mozaic-ds/postcss-media-queries-packer-on-demand": "^1.75.0",

@@ -9,12 +9,13 @@
 
     .section-content {
         gap: $grid-gap;
-        padding: 0 calc($grid-gap /2);
+        padding: 0 calc($grid-gap * 2);
         max-width: 660px;
         position: relative;
         // @include outline;
 
         @include breakpoint($mediumlarge) {
+            padding: 0 calc($grid-gap /2);
             max-width: $max-width;
             display: flex;
             gap: calc($grid-gap * 2);
@@ -44,15 +45,22 @@
             display: block;
             position: absolute;
             top: 50%;
-            left: 0;
+            left: 10vw;
             // transform: translate(-42%, -30%);
             transform: translate(-26%, -10%);
-            width: 80vw;
+            width: 126vw;
+            max-width: 500px;
             aspect-ratio: 7 / 3;
             background-image: radial-gradient(rgba($off_white, 0.25) 0, rgba($dark_grey, 0) 70%);
             pointer-events: none;
 
+            @include breakpoint($medium) {
+                width: 80vw;
+            }
+
             @include breakpoint($mediumlarge) {
+                left: 0;
+                max-width: unset;
                 transform: translate(-42%, -30%);
             }
             
