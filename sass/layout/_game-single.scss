@@ -125,6 +125,14 @@
             }
         }
     }
+
+    .copy {
+        p {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 .game-gallery {
@@ -133,10 +141,7 @@
 }
 
 .slide-info {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
+    
     padding: 25px;
     background-color: $black;
     text-transform: uppercase;
@@ -145,6 +150,13 @@
     font-weight: 700;
     line-height: 0.8;
     text-align: center;
+
+    @include breakpoint($medium) {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
 
     span {
         color: $off_white;
@@ -209,10 +221,15 @@
     padding: clamp(40px, 20vh, 100px) 0;
 
     .section-content {
-        padding: 0 calc($grid-gap / 2);
+        padding: 0 clamp(20px, 5vw, 40px);
     }
 
     .subtitle {
         margin-bottom: clamp(15px, 5vw, 25px);
+    }
+
+    .news-blocks {
+        padding: 0;
+        justify-content: center;
     }
 }
