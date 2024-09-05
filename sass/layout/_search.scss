@@ -1,3 +1,40 @@
+.searchform {
+  width: 100%;
+
+  @include breakpoint($medium) {
+      width: calc((100% / 2) - calc($grid-gap * 1.5) + (calc($grid-gap * 1.5) / 2));
+  }
+
+  @include breakpoint($large) {
+      width: calc((100% / 3) - calc($grid-gap * 1.5) + (calc($grid-gap * 1.5) / 3));
+  }
+    
+  input[type='text'] {
+      height: 58px;
+      color: $off_white;
+      border: none;
+      padding: 10px 10px 10px 50px;
+      // width: 100%;
+      // width: 320px;
+      width: calc(100% - 106px);
+      font-size: 20px;
+      background: $black url(assets/images/icon-magnify.png) left 10px center no-repeat;
+      background-size: 22px auto;
+      
+      &:focus {
+          outline: none;
+      }
+  }
+
+  .fv-button {
+      margin-left: -20px;
+  }
+
+  label {
+      display: none;
+  }
+}
+
 body.search-results {
   .background-image {
     filter: grayscale(100%);
