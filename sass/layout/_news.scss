@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: calc($grid-gap * 1.5);
-    padding: 0 calc($grid-gap / 2);
+    padding: 0 calc($grid-gap);
 
     @include breakpoint($medium) {
         flex-direction: row;
@@ -360,6 +360,7 @@
 }
 
 .searchform {
+    
     input[type='text'] {
         height: 58px;
         color: $off_white;

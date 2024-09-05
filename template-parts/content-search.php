@@ -7,29 +7,65 @@
  * @package dekiru
  */
 
+ $posts_page = get_option( 'page_for_posts' );
+
+ $classes = array(
+	'news-item'
+);
+
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+		<div class="post-thumbnail">
+		<a href="<?php echo the_permalink(); ?>">
+			<?php 
 
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			dekiru_posted_on();
-			dekiru_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+				the_post_thumbnail('news-card-small');
+			
+			if(get_the_post_thumbnail() == null) : ?>
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder-md.jpg" alt="No thumbnail" 
+				width="490" height="276"
+				loading="lazy">
+			<?php endif; ?>
+		</a>
+	</div>
 
-	<?php dekiru_post_thumbnail(); ?>
+	<div class="news-content">
+		<header class="entry-header">				
+			<h2 class="entry-title">
+				<a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a>
+			</h2>
+			<div class="entry-meta">
+				<?php $post_date = get_the_date('d/m/y'); 
+					echo $post_date;
+				?>
+			</div>
+		</header>
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+		<div class="entry-content">
+			<a href="<?php echo the_permalink(); ?>">
+				<?php
+				the_excerpt();
 
-	<footer class="entry-footer">
-		<?php dekiru_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'dekiru' ),
+					'after'  => '</div>',
+				) );
+				?>
+			</a>
+		</div>
+
+		<footer class="entry-footer">
+			<?php if (get_the_category()) : ?>
+				<div class="cats">
+					Category: <?php the_category(' '); ?>
+				</div>
+			<?php endif; ?>
+			<?php if (get_the_tags()) : ?>
+				<div class="tags">
+					Tags: <?php the_tags('', ' '); ?>
+				</div>
+			<?php endif; ?>
+		</footer>
+	</div>
+</article>
