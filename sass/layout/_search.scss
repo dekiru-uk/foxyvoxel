@@ -40,6 +40,7 @@ body.search-results {
     filter: grayscale(100%);
     opacity: 0.2;
     mix-blend-mode: multiply;
+    position: fixed;
   }
 
   .site-main {
