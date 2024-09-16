@@ -37,9 +37,8 @@ $id = get_the_ID();
 		endwhile; // End of the loop.
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 
 <?php
-get_sidebar();
 get_footer();
