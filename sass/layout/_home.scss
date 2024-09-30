@@ -151,7 +151,7 @@
 .news-scroll {
     background-color: $black;
     position: relative;
-    z-index: -90;
+    z-index: 90;
 
     .news-block {
         @include breakpoint($mediumlarge) {
