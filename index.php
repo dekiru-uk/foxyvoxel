@@ -27,12 +27,15 @@ $news_count = "0";
 		if (is_home() && !is_paged()) : ?>
 
 			<?php
+				$minor_tag = get_term_by('slug', 'minor', 'post_tag');
+				$minor_tag_id = $minor_tag ? $minor_tag->term_id : '';
+				
 				$args1 = array(
-					'posts_per_page' => 1,        // Limit to one post
-					'ignore_sticky_posts' => 1, // Ignore sticky posts
-					'tag__not_in'    => array(get_term_by('slug', 'minor', 'post_tag')->term_id), // Exclude posts with 'minor' tag
+						'posts_per_page' => 1,        // Limit to one post
+						'ignore_sticky_posts' => 1,   // Ignore sticky posts
+						'tag__not_in'    => array($minor_tag_id), // Exclude posts with 'minor' tag
 				);
-
+			
 				$query1 = new WP_Query($args1);
 
 				$first_post_id = null;  // Initialize a variable to store the ID of the first post
