@@ -30,8 +30,7 @@ $news_count = "0";
 				$args1 = array(
 					'posts_per_page' => 1,        // Limit to one post
 					'ignore_sticky_posts' => 1, // Ignore sticky posts
-					'tag__not_in'    => array(get_term_by('slug', 'minor', 'post_tag')
-					->term_id), // Exclude posts with 'minor' tag
+					'tag__not_in'    => array(get_term_by('slug', 'minor', 'post_tag')->term_id), // Exclude posts with 'minor' tag
 				);
 
 				$query1 = new WP_Query($args1);
