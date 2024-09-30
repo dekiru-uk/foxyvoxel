@@ -25,7 +25,7 @@
 				'theme_location' => 'footer',
 				'menu_id'        => 'footer-menu',
 				'menu_class'	=> 	'menu'
-			) );
+			));
 		?>
 
 		<div class="information">

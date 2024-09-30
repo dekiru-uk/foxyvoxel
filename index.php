@@ -321,7 +321,7 @@ $news_count = "0";
 			?>
 
 			<?php if(function_exists('wp_paginate')):
-            	wp_paginate(); 
+      	wp_paginate(); 
 			endif; ?>
 		</main>
 
