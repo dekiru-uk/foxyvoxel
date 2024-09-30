@@ -32,6 +32,10 @@
         background-color: $near_black;
         padding: clamp(1rem, 5vw, 2rem) clamp(20px, 10vw, 80px);
 
+        div[class^="_"] {
+            display: inline;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             line-height: 1;
         }
