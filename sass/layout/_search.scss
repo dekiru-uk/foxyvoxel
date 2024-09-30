@@ -1,4 +1,4 @@
-.searchform {
+.search-form {
   width: 100%;
 
   @include breakpoint($medium) {
@@ -10,20 +10,20 @@
   }
     
   input[type='text'] {
-      height: 58px;
-      color: $off_white;
-      border: none;
-      padding: 10px 10px 10px 50px;
-      // width: 100%;
-      // width: 320px;
-      width: calc(100% - 106px);
-      font-size: 20px;
-      background: $black url(assets/images/icon-magnify.png) left 10px center no-repeat;
-      background-size: 22px auto;
-      
-      &:focus {
-          outline: none;
-      }
+    height: 58px;
+    color: $off_white;
+    border: none;
+    padding: 10px 10px 10px 50px;
+    // width: 100%;
+    // width: 320px;
+    width: calc(100% - 106px);
+    font-size: 20px;
+    background: $black url(assets/images/icon-magnify.png) left 10px center no-repeat;
+    background-size: 22px auto;
+    
+    &:focus {
+      outline: none;
+    }
   }
 
   .fv-button {
