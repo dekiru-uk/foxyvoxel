@@ -93,17 +93,19 @@
 			left: 0;
 			width: 100vw;
 			height: 100vh;
-			font-size: 32px;
+			font-size: 24px;
+			line-height: 1;
 
 			li {
 				&.current-menu-item,
 				&.current-page-ancestor  {
 					a {
 						&:before {
-							filter: invert(1);
-							transform: rotate(180deg) translate(50%, 100%);
-							bottom: -16px;
-							z-index: 2;
+							content: none;
+							// filter: invert(1);
+							// transform: rotate(180deg) translate(50%, 100%);
+							// bottom: -16px;
+							// z-index: 2;
 						}
 					}
 				}
@@ -125,7 +127,7 @@
 			justify-content: center;
 
 			img {
-				height: 32px;
+				height: 24px;
 			}
 		}
 	}

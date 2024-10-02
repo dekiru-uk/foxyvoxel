@@ -88,9 +88,10 @@
     .information {
         width: 100%;
         background-color: #EEE4D7;
-        padding: 40px;
+        padding: 40px 20px;
         justify-content: center;
         position: relative;
+        font-size: 16px;
 
         @include breakpoint($medium) {
             display: flex;

@@ -187,9 +187,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-        padding: clamp(40px, 2vw, 80px) clamp(40px, 2vw, 80px) 100px;
+        padding: clamp(40px, 2vw, 80px) clamp(40px, 2vw, 80px) 120px;
 
         @include breakpoint($mediumlarge) {
+            padding: clamp(40px, 2vw, 80px) clamp(40px, 2vw, 80px) 100px;
             max-width: 562px;
             margin: 0 auto;
         }
@@ -207,10 +208,18 @@
             line-height: 1;
             font-size: clamp(2rem, 1.0833rem + 2.4444vw, 3.375rem);
         }
+
+        .excerpt {
+            display: none;
+
+            @include breakpoint($mediumlarge) {
+                display: block;
+            }
+        }
     }
 
     .slide-control {
-        width: 50vw;
+        width: 100vw;
         position: absolute;
         right: 0;
         bottom: 0;
@@ -219,6 +228,10 @@
         gap: 20px;
         align-items: center;
         padding: clamp(40px, 2vw, 80px);
+
+        @include breakpoint($mediumlarge) {
+            width: 50vw;
+        }
     }
 
     .slide-navigation {
