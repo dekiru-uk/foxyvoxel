@@ -84,6 +84,7 @@
         // outline: 1px dotted #faf;
         
         @include breakpoint($mediumlarge) {
+            height: unset;
             order: 2;
             width: 50vw;
         }
