@@ -2,11 +2,15 @@
   width: 100%;
 
   @include breakpoint($medium) {
-      width: calc((100% / 2) - calc($grid-gap * 1.5) + (calc($grid-gap * 1.5) / 2));
+    width: calc((100% / 2) - calc($grid-gap * 1.5) + (calc($grid-gap * 1.5) / 2));
   }
 
   @include breakpoint($large) {
-      width: calc((100% / 3) - calc($grid-gap * 1.5) + (calc($grid-gap * 1.5) / 3));
+    width: calc((100% / 3) - calc($grid-gap * 1.5) + (calc($grid-gap * 1.5) / 3));
+  }
+
+  body.search-results & {
+    width: 100%;
   }
     
   input[type='text'] {
