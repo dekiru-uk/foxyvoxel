@@ -357,15 +357,11 @@
     gap: 20px;
 }
 
-body[class*='paged-'] {
+// body[class*='paged-'],
+body.archive {
     .site-main.news {
         padding-top: 120px;
     }
-}
-
-.navigation {
-    width: 100%;
-    padding: 40px 0;
 }
 
 .site-main.news .wp-paginate {

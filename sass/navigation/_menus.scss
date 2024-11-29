@@ -143,19 +143,39 @@
 .posts-navigation,
 .post-navigation {
 
+	max-width: $max_width;
+	margin: 0 auto 80px;
+	padding: clamp(1rem, 5vw, 2rem) clamp(20px, 10vw, 80px);
+	
+	a {
+		@extend .fv-button;
+	}
+	
+	.nav-links {
+		border-top: 1px solid rgba($off_white, 0.23);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 20px;
+		padding: clamp(1rem, 5vw, 2rem) 0;
+	}
+
 	.site-main & {
 		margin: 0 0 1.5em;
 	}
 
 	.nav-previous {
-		float: left;
-		width: 50%;
+		@include breakpoint($medium) {
+			max-width: 50%;
+		}
 	}
 
 	.nav-next {
-		float: right;
 		text-align: right;
-		width: 50%;
+
+		@include breakpoint($medium) {
+			max-width: 50%;
+		}
 	}
 }
 

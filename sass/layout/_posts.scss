@@ -83,16 +83,7 @@
         }
     }
 
-    .post-navigation {
-        border-top: 1px solid rgba($off_white, 0.23);
-        margin: 0 clamp(20px, 10vw, 80px);
-        padding: 2rem 0;
-        margin-bottom: 80px;
-
-        a {
-            @extend .fv-button;
-        }
-    }
+    
 
     .post {
         a {
