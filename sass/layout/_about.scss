@@ -171,7 +171,7 @@ body.page-template-template-about {
 				transform: translate(-50%, -50%);
 				width: 22px;
 				height: 22px;
-				background-size: cover;
+				background-size: contain;
 				filter: brightness(0) saturate(100%) invert(93%) sepia(18%) saturate(159%) hue-rotate(350deg) brightness(98%) contrast(90%);
 			}
 		}
