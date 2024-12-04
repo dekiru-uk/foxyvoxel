@@ -43,7 +43,7 @@ get_header();
 							$name = $details['name'];
 							$position = $details['position'];
 							$bio = $details['bio'];
-							$social_link = $details['social_link'];
+							// $social_link = $details['social_link'];
 						?>
 							<div class="team-member">
 								<div class="photo">
@@ -53,9 +53,22 @@ get_header();
 										<div class="placeholder"></div>
 									<?php endif; ?>
 
-									<?php if ($social_link) : ?>
-										<a href="<?php echo $social_link; ?>" class="social-link">Connect with <?php echo $name; ?></a>
-									<?php endif; ?>
+									<?php while (have_rows('details')) : the_row(); ?>
+									
+										<?php if (have_rows('social_links')) : ?>
+											<div class="team-social-links">
+												<?php while (have_rows('social_links')) : the_row(); 
+													$social_link = get_sub_field('social_link');
+													$social_icon = get_sub_field('social_icon');
+												?>
+												<a href="<?php echo $social_link; ?>" class="social-link">
+													<img src="<?php echo $social_icon['url']; ?>" alt="<?php echo $name; ?>" width="24" height="24" loading="lazy">
+												</a>
+												<?php endwhile; ?>
+											</div>
+										<?php endif; ?>
+									<?php endwhile; ?>
+
 								</div>
 								<h2 class="name"><?php echo $name; ?></h2>
 								<p class="position"><?php echo $position; ?></p>
