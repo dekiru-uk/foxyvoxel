@@ -35,8 +35,31 @@
             </form>
             */ ?>
             <?php // [forminator_form id="209"]
-                echo do_shortcode( '[forminator_form id="209"]' );
+                // echo do_shortcode( '[forminator_form id="209"]' );
             ?>
+
+            <form action="https://foxyvoxel.us14.list-manage.com/subscribe/post?u=81a4309eafd0990394b756d4a&amp;id=8478369b9a&amp;f_id=007893e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+							<div id="mc_embed_signup_scroll" class="signup">
+								<div class="mc-field-group">
+									<label for="mce-EMAIL" class="hidden">
+										Email Address <span class="asterisk">*</span>
+									</label>
+									<input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="E.g. vulpes@foxyvoxel.io">
+									<button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+										Go Go Go!
+									</button>
+								</div>
+
+								<div id="mce-responses" class="clear foot">
+									<div class="response" id="mce-error-response" style="display: none;"></div>
+									<div class="response" id="mce-success-response" style="display: none;"></div>
+								</div>
+                <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                  <input type="text" name="b_81a4309eafd0990394b756d4a_8478369b9a" tabindex="-1" value="">
+                </div>
+              </div>
+            </form>
+  
             
         </div>
     </div>
