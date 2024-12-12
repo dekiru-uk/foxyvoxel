@@ -123,14 +123,14 @@ add_action( 'after_setup_theme', 'dekiru_content_width', 0 );
 function dekiru_scripts() {
 	
 	wp_deregister_script('jquery');
-	wp_enqueue_script('jquery', '//cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array(), null, true);
+	wp_enqueue_script('jquery', get_template_directory_uri() . '/js/vendor/jquery.min.js', array(), null, true);
 	
-	wp_enqueue_script( 'gsap-js', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), false, true );
-    // ScrollTrigger - with gsap.js passed as a dependency
-    wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap-js'), false, true );
+	wp_enqueue_script( 'gsap-js', get_template_directory_uri() . '/js/vendor/gsap.min.js', array(), false, true );
+  // ScrollTrigger - with gsap.js passed as a dependency
+   wp_enqueue_script( 'gsap-st', get_template_directory_uri() . '/js/vendor/ScrollTrigger.min.js', array('gsap-js'), false, true );
 
-	wp_enqueue_script('swiper-script', '//cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js', array(), null, true);
-	wp_enqueue_style( 'swiper-style', '//cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css' );
+	wp_enqueue_script('swiper-script', get_template_directory_uri() . '/js/vendor/swiper-bundle.min.js', array(), null, true);
+	wp_enqueue_style( 'swiper-style', get_template_directory_uri() . '/js/vendor/swiper-bundle.min.css' );
 	
 	wp_enqueue_script( 'magnifique-scripts', get_template_directory_uri() . '/js/vendor/jquery.magnific-popup-edit.js', array(), null, true );
 	
