@@ -1,9 +1,3 @@
-// .rajdhani {
-//     font-family: "Rajdhani", sans-serif;
-//     font-weight: 400;
-//     font-style: normal;
-// }
-
 @font-face {
     font-family: 'Rajdhani', sans-serif;
     src: url('assets/fonts/Rajdhani-Regular.woff2') format('woff2');
@@ -14,11 +8,17 @@
 
 @font-face {
     font-family: 'Rajdhani', sans-serif;
-    src: url('assets/fonts/Rajdhani-Rajdhani-Bold.woff2') format('woff2');
+    src: url('assets/fonts/Rajdhani-Bold.woff2') format('woff2');
     font-weight: 700;
     font-display: swap;
     font-style: normal;
 }
+
+// .rajdhani {
+//     font-family: "Rajdhani", sans-serif;
+//     font-weight: 400;
+//     font-style: normal;
+// }
 
 @font-face {
     font-family: 'RetroGaming';
