@@ -110,83 +110,83 @@
         color: rgba($off_white, 0.6);
     }
 
-    // .forminator-ui.forminator-custom-form {
-    //     gap: 0;
+    .forminator-ui.forminator-custom-form {
+        gap: 0;
+    }
+
+    .forminator-label {
+        display: none !important;
+    }
+
+    .forminator-row-last {
+        width: unset !important;
+        padding-top: 20px;
+        text-align: right;
+
+        @include breakpoint($large) {
+            padding-top: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .forminator-button {
+        min-width: unset !important;
+    }
+
+    // mailchimp
+    // .mc-field-group {
+    //     display: flex;
+    //     flex-direction: column;
+    //     gap: 20px;
+    //     width: 100%;
+    //     align-items: center;
+    //     position: relative;
+
+    //     @include breakpoint($smallmedium) {
+    //         flex-direction: row;
+    //         gap: 0;
+    //     }
+    // }
+    // label {
+    //     font-weight: 700;
+    //     text-transform: uppercase;
+    //     font-size: 20px;
+    //     // display: block;
+    //     padding-bottom: 10px;
     // }
 
-    // .forminator-label {
-    //     display: none !important;
-    // }
-
-    // .forminator-row-last {
-    //     width: unset !important;
-    //     padding-top: 20px;
-    //     text-align: right;
-
-    //     @include breakpoint($large) {
-    //         padding-top: 0;
-    //         position: absolute;
-    //         top: 0;
-    //         right: 0;
+    // input[type='text'],
+    // input[type='email'] {
+    //     height: 58px;
+    //     background: $black;
+    //     color: $off_white;
+    //     border: none;
+    //     padding: 10px;
+    //     width: 100%;
+    //     font-size: 20px;
+        
+    //     &:focus {
+    //         outline: none;
     //     }
     // }
 
-    // .forminator-button {
-    //     min-width: unset !important;
+    // input[type='email'] {
+    //     @include breakpoint($smallmedium) {
+    //         width: calc(100% - 118px);
+    //     }
     // }
 
-    // mailchimp
-    .mc-field-group {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-        align-items: center;
-        position: relative;
-
-        @include breakpoint($smallmedium) {
-            flex-direction: row;
-            gap: 0;
-        }
-    }
-    label {
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 20px;
-        // display: block;
-        padding-bottom: 10px;
-    }
-
-    input[type='text'],
-    input[type='email'] {
-        height: 58px;
-        background: $black;
-        color: $off_white;
-        border: none;
-        padding: 10px;
-        width: 100%;
-        font-size: 20px;
+    // .button {
+    //     @extend .fv-button;
         
-        &:focus {
-            outline: none;
-        }
-    }
-
-    input[type='email'] {
-        @include breakpoint($smallmedium) {
-            width: calc(100% - 118px);
-        }
-    }
-
-    .button {
-        @extend .fv-button;
-        
-        @include breakpoint($smallmedium) {
-            min-width: unset !important;
-            position: absolute;
-            top: 50%;
-            right: 0;
-            transform: translateY(-50%);
-        }
-    }
+    //     @include breakpoint($smallmedium) {
+    //         min-width: unset !important;
+    //         position: absolute;
+    //         top: 50%;
+    //         right: 0;
+    //         transform: translateY(-50%);
+    //     }
+    // }
 }
