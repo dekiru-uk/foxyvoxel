@@ -126,8 +126,9 @@
         @include breakpoint($large) {
             padding-top: 0;
             position: absolute;
-            top: 0;
+            top: 50%;
             right: 0;
+            transform: translateY(-50%);
         }
     }
 
