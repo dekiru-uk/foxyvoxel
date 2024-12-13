@@ -46,7 +46,7 @@
         }
 
         &.forminator-row-last {
-            display: block !important;
+            display: block;
         }
     
         @include breakpoint($mediumlarge) {
